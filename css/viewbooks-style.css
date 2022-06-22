@@ -1,0 +1,111 @@
+/* Google Fonts Import Link */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --maincolor: #191e4e;
+  --secondcolor: #d6f0f1;
+  --thirdcolor: #238c8f;
+  --fourthcolor: #1d1b31;
+  --mainfont: Rockwell;
+  --bg: url("../img/home.png");
+}
+.home-section .cont-table {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}
+/* card */
+#this {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  /* overflow: scroll; */
+}
+#this .row {
+  width: 100vw;
+  justify-content: center;
+}
+#bk-box {
+  height: 30%;
+  border-radius: 3px;
+
+  /* background: linear-gradient(45deg, #259699, #207e81);
+box-shadow:  5px -5px 1px #1b6c6e,
+             -5px 5px 2px #2bacb0; */
+  border-radius: 5px;
+
+  background: linear-gradient(to right, #191e4e, #168486);
+
+  position: relative;
+}
+
+.box-top {
+ left: 0;
+ border-top-left-radius: 5px;
+ border-bottom-left-radius: 5px;
+  background-color: var(--secondcolor);
+    height: 100%;
+    position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box-body{
+    margin-right: 20px;
+    display: flex;
+    right: 0;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    height: 100%;
+    width: 60%;
+}
+.box-body #text {
+  color: var(--secondcolor);
+  font-family: var(--mainfont);
+  font-size: 1.75rem;
+  text-transform: capitalize;
+  text-align: right;
+}
+.box-body #sub-text {
+  font-family: poppins;
+  text-align: right;
+  
+}
+.box-top img {
+  border: 1px solid var(--maincolor);
+  width: 85%;
+  height: 90%;
+}
+
+.box-footer a {
+
+  margin-right: 20px;
+  margin-bottom: 20px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: var(--secondcolor);
+}
+
+.view-dt-btn{
+  margin-right: 20px;
+margin-bottom: 20px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: var(--thirdcolor);
+  border: 2px solid var(--thirdcolor);
+  color: var(--secondcolor);
+  text-decoration: underline;
+}
+.capitalize{
+  text-transform: capitalize;
+}
+
+/* responsive */
+@media (max-width: 1086px) {
+}
+
+@media (max-width: 910px) {
+}

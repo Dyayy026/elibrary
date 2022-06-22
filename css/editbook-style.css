@@ -1,0 +1,54 @@
+/* Google Fonts Import Link */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+:root{
+  --maincolor:#191E4E;
+  --secondcolor:#D6F0F1;
+  --thirdcolor: #238C8F;
+  --fourthcolor:#1d1b31;
+  --mainfont: Rockwell;
+  --bg: url('../img/home.png');
+}
+
+.cont-editbook{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cont-editbook .container{
+    position: relative;
+    display: block;
+}
+.cont-editbook .container .input-group{
+    margin: 10px 10px ;
+}
+.cont-editbook .container .input-group label{
+    width: 150px;
+    font-size: 1rem;
+    margin-right: 20px;
+}
+.cont-editbook .container .input-group input {
+    
+    border-color: var(--maincolor) 2px solid;
+    line-height: 1rem;
+    border-radius: 5px;
+    border-bottom-left-radius: 5px !important; 
+    border-top-left-radius: 5px !important; 
+}
+.cont-editbook .container .input-group input[type=file] {
+    
+    background-color: var(--thirdcolor);
+    color: white;
+    border: var(--maincolor) 1px solid ;
+}
+.cont-editbook .container .input-group:last-child {
+    margin-top: 3rem;
+    justify-content: end;
+    
+}
+.cont-editbook .container .input-group .btn-dark {
+    
+    border: var(--thirdcolor) 1px solid;
+    background-color: var(--thirdcolor);
+    
+}

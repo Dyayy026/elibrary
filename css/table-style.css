@@ -1,0 +1,69 @@
+#brw-table{
+    width: 90%;
+    margin-top:100px;
+}
+#brw-table .table{
+    border-radius: 5px; 
+    background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#f29263),
+    to(#ee5a6f)
+  );
+  background: linear-gradient(to right, #191e4e, #168486);
+
+}
+#brw-table .table thead{
+    background-color: white;
+}
+#brw-table .table tr td{
+    border-left: 1px solid var(--maincolor);
+    color: white;
+}
+#btn{
+    background-color: var(--thirdcolor);
+    border: none;
+}
+
+thead th{
+    text-align: center;
+}
+tbody td{
+    text-align: center;
+}
+
+.btn-dark{
+    background-color: var(--thirdcolor);
+    border: none;
+    outline: none;
+}
+.btn-dark:hover{
+    background-color: rgb(9, 138, 143);
+    outline: 1px solid var(--thirdcolor);
+}
+
+/* search title */
+.controls{
+    display: flex;
+}
+.controls input[type=text]{
+    width: 50%;
+    border: var(--maincolor);
+    border-top-right-radius: 0 ;
+    border-bottom-right-radius: 0 ;
+}
+.controls .btn{
+    background-color: var(--thirdcolor);
+  color: white;
+  border: var(--thirdcolor) 2px solid;
+  border-top-left-radius: 0 ;
+    border-bottom-left-radius: 0 ;
+}
+
+/* capitalize first letter of the word book */
+.capitalize{
+    text-transform: capitalize;
+    
+}
+

@@ -1,0 +1,46 @@
+.home-section .cont-addbook{
+    height: 70%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cont-addbook .container{
+    position: relative;
+    display: block;
+}
+
+.home-section .cont-addbook .container .input-group{
+    margin: 10px 10px ;
+}
+.home-section .cont-addbook .container .input-group label{
+    width: 150px;
+    font-size: 1rem;
+    margin-right: 20px;
+}
+.home-section .cont-addbook .container .input-group input {
+    border-color: var(--maincolor) 2px solid;
+    line-height: 1rem;
+    border-radius: 5px;
+    border-bottom-left-radius: 5px !important; 
+    border-top-left-radius: 5px !important; 
+}
+.home-section .cont-addbook .container .input-group input[type=file] {
+    
+    background-color: var(--thirdcolor);
+    color: white;
+    border: var(--maincolor) 1px solid ;
+}
+.home-section .cont-addbook .container .input-group:last-child {
+    margin-top: 3rem;
+    justify-content: end;
+    
+}
+.home-section .cont-addbook .container .input-group .btn-dark {
+    
+    border: var(--thirdcolor) 1px solid;
+    background-color: var(--thirdcolor);
+    
+}
+
+

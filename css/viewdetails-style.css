@@ -1,0 +1,80 @@
+/* Google Fonts Import Link */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+:root{
+  --maincolor:#191E4E;
+  --secondcolor:#D6F0F1;
+  --thirdcolor: #238C8F;
+  --fourthcolor:#1d1b31;
+  --mainfont: Rockwell;
+  --secondfont: poppins;
+  --bg: url('../img/home.png');
+}
+
+#cont-box img{
+  margin: 10px 10px;
+  width: 100%;
+}
+#cont-box .col-lg-8{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.text-wrap{
+  width: 90%;
+  
+}
+.text-wrap p{
+  font-size: 1.50rem;
+  margin: 2rem 2rem;
+  font-family: var(--secondfont);
+  border-top: 2px var(--thirdcolor) solid;
+}
+/* button */
+#cont-btn-modify{
+  height: 100px;
+  display: flex;
+  justify-content: right;
+}
+#btn-edit, #btn-del{
+  /* width: 200px;
+  height: 50px; */
+  margin: 10px 20px 10px 5px;
+}
+#btn-edit {
+  background-color: var(--thirdcolor);
+  border: var(--thirdcolor);
+}
+#btn-edit a, #btn-del a {
+  /* font-size: 20px; */
+  text-decoration: none;
+  color: var(--secondcolor);
+}
+
+.bk-img{
+  border: 5px solid var(--maincolor);
+  border-radius: 3px;
+}
+
+/* capitalize first letter of the word */
+.capitalize{
+  text-transform: capitalize;
+}
+
+/* modal header */
+
+
+/* responsive */
+@media (max-width: 975px){
+  #cont-box img{
+    display: flex;
+
+    margin: auto auto;
+    width: 80%;
+  }
+  .text-wrap{
+   
+    width: 100%;
+  }
+  
+}
