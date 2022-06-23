@@ -26,6 +26,14 @@
             .print-body{
                 visibility: visible;
             }
+            /* pang adjust to ng posisyon ng document na iiprint mula top to left */
+            .print-body{
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                margin-top: 250px;
+                padding-right: 100px;
+            }
         }
 
     </style>
