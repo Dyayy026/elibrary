@@ -38,6 +38,7 @@ $a[] = "Vicky";
 
 // get the q parameter from URL
 $q = $_REQUEST["q"];
+$r = $_REQUEST["r"];
 
 //$hint = "";
 $con = mysqli_connect('localhost','root','','library');
@@ -59,13 +60,14 @@ if ($q !="") {
       }
     }
   }*/
-$result=mysqli_query($con,"SELECT * FROM borrowed WHERE name='$q'");
+$result=mysqli_query($con,"SELECT * FROM borrowed WHERE b_id='$q'");
 $rowcount=mysqli_num_rows($result);
-if($rowcount>=0){
-$ret=mysqli_query($con,"INSERT INTO `borrowed`(name,Time) VALUES ('$q',NOW())");
-if($ret)
+if($rowcount >= 0){
+$ret=mysqli_query($con,"INSERT INTO `borrowed`(b_id,sch_id,bw_date,bw_due,time) VALUES ('$q','$r',curdate(),date_add(curdate(),interval 60 day),NOW())");
+if($ret === true)
 {
-echo '<div class="alert alert-success"><strong>Success!</strong> employee successfully registered</div>'+date('l jS \of F Y h:i:s A');
+  echo "<script type='text/javascript'>alert('Success')</script>";
+  header( "Refresh:0.01; url=borrowed.php", true, 303);
 ?>
 <?php }
 else
@@ -74,8 +76,8 @@ else
 }
 }else{
 //echo 'employee is already registered';  
-echo '<div class="alert alert-success"><strong>Success!</strong> employee successfully registered</div>';
-echo date('l jS \of F Y h:i:s A');
+// echo '<div class="alert alert-success"><strong>Success!</strong> employee successfully registered</div>';
+// echo date('l jS \of F Y h:i:s A');
 
   }
 

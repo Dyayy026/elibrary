@@ -166,6 +166,7 @@ else {
             var x = document.getElementById("myAudio1");
             var x2 = document.getElementById("myAudio2");      
             function showHint(str) {
+            var x3 = document.getElementById("s_id").value;  
             if (str.length == 0) {
                 document.getElementById("txtHint").innerHTML = "";
                 return;
@@ -176,7 +177,7 @@ else {
                     document.getElementById("txtHint").innerHTML = this.responseText;
                 }
                 };
-                xmlhttp.open("GET", "gethint.php?q=" + str, true);
+                xmlhttp.open("GET", "gethint.php?q=" + str + "&r=" + x3, true);
                 xmlhttp.send();
             }
             }
@@ -189,8 +190,11 @@ else {
             </script>
             <div class="col" style="padding:30px;">
                 <h4>SCAN RESULT</h4>
-                <div>Book Title</div><form action="">
-                <input type="text" name="start" class="input" id="result" onkeyup="showHint(this.value)" placeholder="result here" readonly="" /></form>
+                <div>Book Title</div>
+                <form action="">
+                    <input type="text" name="start" class="input" id="result" onkeyup="showHint(this.value)" placeholder="result here" readonly="" />
+                    <input type="text" name="s_id" class="input" id="s_id" placeholder="School ID here" />
+                </form>
                 <p>Status: <span id="txtHint"></span></p>
             </div>
             </div>
