@@ -62,37 +62,10 @@
         }
 
 
-
-	
-
-        //QRCODE
-        include "../../phpqrcode/qrlib.php";
-        $PNG_TEMP_DIR = '../../temp/';
-        if (!file_exists($PNG_TEMP_DIR))
-           mkdir($PNG_TEMP_DIR);
-
-       $filename = $PNG_TEMP_DIR . 'test.png';
-
-       if (isset($_POST["save"])) {
-
-       $codeString = $_POST['title'] . "\n";
-       $codeString .= $_POST['author'] . "\n";
-       $codeString .= $_POST['pub_year'] . "\n";
-       $codeString .= $_POST['cat_id'] . "\n";
-       $codeString .= $_POST['serial_number'] . "\n";
-
-       $filename = $PNG_TEMP_DIR . 'test' . md5($codeString) . '.png';
-
-       QRcode::png($codeString, $filename);
-
-       echo '<img src="' . $PNG_TEMP_DIR . basename($filename) . '" /><hr/>';
-   }
-    //END OF QRCODE 
-
     mysqli_query($db, "INSERT INTO books (title, author, pub_year, cat_id, serial_number,
-    copies_owned, copies_avlbl, date_added, photo, qrcode) 
+    copies_owned, copies_avlbl, date_added, photo) 
     VALUES ('$title', '$author', '$pub_year', '$cat_id','$serial', '$copies_owned', 
-    '$copies_avlbl', '$date_added', '$fileNameNew','$filename')"); 
+    '$copies_avlbl', '$date_added', '$fileNameNew')"); 
     $_SESSION['message'] = ""; 
     header('location: view_book.php');
 	}

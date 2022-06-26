@@ -102,7 +102,7 @@
                         <tr>
                         <td>
                                 <button class="btn btn-information" id="btn-edit">
-                                    <a href="AAgenerateQr?edit=<?php echo $n['b_id']; ?>" class="genQr_btn">Generate QR</a>
+                                    <a href="AAgenerateQr.php?genQr=<?php echo $n['b_id']; ?>" class="genQr_btn">Generate QR</a>
                                 </button>
                                 
                             </td>
