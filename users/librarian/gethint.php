@@ -62,7 +62,7 @@ if ($q !="") {
 $result=mysqli_query($con,"SELECT * FROM borrowed WHERE name='$q'");
 $rowcount=mysqli_num_rows($result);
 if($rowcount>=0){
-$ret=mysqli_query($con,"INSERT INTO `logs`(name,Time) VALUES ('$q',NOW())");
+$ret=mysqli_query($con,"INSERT INTO `borrowed`(name,Time) VALUES ('$q',NOW())");
 if($ret)
 {
 echo '<div class="alert alert-success"><strong>Success!</strong> employee successfully registered</div>'+date('l jS \of F Y h:i:s A');
