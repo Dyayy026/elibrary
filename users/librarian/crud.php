@@ -80,9 +80,6 @@
        $codeString .= $_POST['pub_year'] . "\n";
        $codeString .= $_POST['cat_id'] . "\n";
        $codeString .= $_POST['serial_number'] . "\n";
-       $codeString .= $_POST['copies_owned'] . "\n";
-       $codeString .= $_POST['copies_avlbl'] . "\n";
-       $codeString .= $_POST['date_added'] . "\n";
 
        $filename = $PNG_TEMP_DIR . 'test' . md5($codeString) . '.png';
 
