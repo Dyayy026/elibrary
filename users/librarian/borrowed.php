@@ -21,6 +21,7 @@ if ($_SESSION['sch_id']) {
 
         <link rel="stylesheet" href="../../css/sidebar-style.css">
         <link rel="stylesheet" href="../../css/table-style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <script src="../../templates/js-links.php"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -35,12 +36,17 @@ if ($_SESSION['sch_id']) {
             <div class="home-content">
                 <i class='bx bx-menu'></i>
                 <span class="text">Borrow Requests </span>
+                <div style="margin-top: 250px;">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary experiment" data-bs-toggle="modal" data-bs-target="#myModal" style="background-color: #238C8F;">
+                        Scan QR
+                    </button>                                      
+                </div> 
             </div>
             <!--end of home content-->
-
-
+            
             <!-- start -->
-            <div class="container" id="brw-table">
+            <div class="container" id="brw-table"> 
                 <table id="example" class="table table-hover " >
                     <thead>
                         <tr>
@@ -98,11 +104,7 @@ if ($_SESSION['sch_id']) {
                     </tfoot> -->
                 </table>
             </div>
-
-
-
-
-
+    
         </section>
 
 
@@ -122,8 +124,11 @@ if ($_SESSION['sch_id']) {
                 sidebar.classList.toggle("close");
             });
         </script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
         <script src="../../templates/js-links.php"></script>
     </body>
+
 
     </html>
 
@@ -131,3 +136,14 @@ if ($_SESSION['sch_id']) {
 else {
     echo "<script type='text/javascript'>alert('Access Denied!!!')</script>";
 } ?>
+
+<!-- The Modal -->
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      ...
+    </div>
+  </div>
+</div>
+<!-- End of Modal -->
+
