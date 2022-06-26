@@ -83,6 +83,7 @@ if ($_SESSION['sch_id']) {
                         <?php } ?>
                         
                     </tbody>
+                  
                     <!-- just in case gusto mo parin ng may footer pre -->
                     <!-- Ayoko pre -->
                     <!-- <tfoot>
