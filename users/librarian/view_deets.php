@@ -100,6 +100,12 @@
                 <div class="container " id="cont-btn-modify">
                     <table>
                         <tr>
+                        <td>
+                                <button class="btn btn-information" id="btn-edit">
+                                    <a href="AAgenerateQr.php?genQr=<?php echo $n['b_id']; ?>" class="genQr_btn">Generate QR</a>
+                                </button>
+                                
+                            </td>
                             <td>
                                 <button class="btn btn-dark" id="btn-edit">
                                     <a href="edit_book.php?edit=<?php echo $n['b_id']; ?>" class="edit_btn">Edit</a>
