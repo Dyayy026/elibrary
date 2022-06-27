@@ -192,8 +192,8 @@ else {
                 <h4>SCAN RESULT</h4>
                 <div>Book Title</div>
                 <form action="">
-                    <input type="text" name="start" class="input" id="result" onkeyup="showHint(this.value)" placeholder="result here" readonly="" />
                     <input type="text" name="s_id" class="input" id="s_id" placeholder="School ID here" />
+                    <input type="text" name="start" class="input" id="result" onkeyup="showHint(this.value)" placeholder="Scan result here" readonly="" />
                 </form>
                 <p>Status: <span id="txtHint"></span></p>
             </div>
