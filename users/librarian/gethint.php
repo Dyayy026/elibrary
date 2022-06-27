@@ -64,9 +64,9 @@ $result=mysqli_query($con,"SELECT * FROM borrowed WHERE b_id='$q'");
 $rowcount=mysqli_num_rows($result);
 if($rowcount >= 0){
 $ret=mysqli_query($con,"INSERT INTO `borrowed`(b_id,sch_id,bw_date,bw_due,time) VALUES ('$q','$r',curdate(),date_add(curdate(),interval 60 day),NOW())");
-if($conn->query($sql1) === TRUE)
+if($ret === TRUE)
 {
-  $sql3="UPDATE books SET copies_avlbl=copies_avlbl-1 WHERE b_id='$q'";
+  $sql3 = mysqli_query($con,"UPDATE books SET copies_avlbl=copies_avlbl-1 WHERE b_id='$q'");
   echo "<script type='text/javascript'>alert('Success')</script>";
   header( "Refresh:0.01; url=borrowed.php", true, 303);
 ?>

@@ -64,9 +64,9 @@ $result=mysqli_query($con,"SELECT * FROM borrowed WHERE b_id='$q' AND sch_id ='$
 $rowcount=mysqli_num_rows($result);
 if($rowcount > 0){
 $ret=mysqli_query($con,"UPDATE borrowed SET rtn_date=curdate()");
-if($con->query($ret) === TRUE)
+if($ret === TRUE)
 {
-  $sql3="UPDATE books SET copies_avlbl=copies_avlbl+1 WHERE b_id='$q'";
+  $sql3 = mysqli_query($con,"UPDATE books SET copies_avlbl=copies_avlbl+1 WHERE b_id='$q'");
   echo "<script type='text/javascript'>alert('Success')</script>";
   header( "Refresh:0.01; url=return_request.php", true, 303);
 ?>
