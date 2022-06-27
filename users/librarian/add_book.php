@@ -53,8 +53,6 @@
                         if (isset($_GET['edit'])) {
                             $id = $_GET['edit'];
                             $update = true;
-
-
                             $record = mysqli_query($db, "SELECT * FROM books WHERE b_id=$b_id");
 
                         // if (count($record)) {
@@ -65,7 +63,6 @@
                     }
                 ?>
                
-
             <div class="container justify-content">
 
                 <div class="input-group">
@@ -118,7 +115,7 @@
                 </div>
 
                 <div class="input-group">
-                    <button class="btn btn-dark" type="submit" name="save" >Save</button>
+                    <button class="btn btn-dark" type="submit" name="save" style="background-color: #238C8F; border:none;" >Save</button>
                 </div>
             </div>
 

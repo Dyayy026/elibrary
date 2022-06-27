@@ -35,7 +35,7 @@ if ($_SESSION['sch_id']) {
             <div class="home-content">
                 <i class='bx bx-menu'></i>
                 <span class="text">Return Requests </span>
-                <div style="margin-top: 250px;">
+                <div style="margin-left: 50px;">
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary experiment" data-bs-toggle="modal" data-bs-target="#myModal" style="background-color: #238C8F;">
                         Scan QR

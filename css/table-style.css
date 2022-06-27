@@ -1,6 +1,23 @@
+:root {
+    --offcanvas-width: 270px;
+    --topNavbarHeight: 56px;
+    --secondcolor:#D6F0F1;
+  
+      /* --maincolor:#191E4E; */
+    --maincolor: #087630;
+    --secondcolor:#D6F0F1;
+    /* --thirdcolor: #238C8F; */
+    --thirdcolor: #3BC35F;
+    /* --fourthcolor:#1d1b31; */
+    --fourthcolor: #001410;
+  
+    --gradient1: #62BE72;
+    --gradient2: #168486;
+  }
+
 #brw-table{
     width: 90%;
-    margin-top:100px;
+    margin-top: 50px;
 }
 #brw-table .table{
     border-radius: 5px; 
@@ -11,7 +28,8 @@
     from(#f29263),
     to(#ee5a6f)
   );
-  background: linear-gradient(to right, #191e4e, #168486);
+  /* background: linear-gradient(to right, #191e4e, #168486); */
+  background: linear-gradient(to right, var(--gradient1), var(--gradient2));
 
 }
 #brw-table .table thead{
@@ -25,6 +43,7 @@
     background-color: var(--thirdcolor);
     border: none;
 }
+
 
 thead th{
     text-align: center;
@@ -67,3 +86,9 @@ tbody td{
     
 }
 
+/* SCANNING MODAL STYLE */
+.inp-style{
+    border: var(--thirdcolor) 1px solid;
+    border-radius: 5px;
+    margin-top: 20px;
+}

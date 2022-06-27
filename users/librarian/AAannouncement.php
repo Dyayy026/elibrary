@@ -48,25 +48,23 @@ if ($_SESSION['sch_id']) {
                 $sql =mysqli_query($conn,"SELECT * FROM announcement");
             ?>
                
-                <div class="container cont-editprofile">
-                    <div style="margin-top: -600px;">
+                <div class="container " style="top: 0; position:absolute; top:15%;">
+                    <div style="position:absolute; top:0; z-index: 1; left:45%;">
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary experiment" data-bs-toggle="modal" data-bs-target="#myModal" style="background-color: #238C8F;">
                             New Announcement
                         </button>                                      
                     </div>       
-                     <div class="container">
-
-                     
+                     <div class="container ann-cont">
                             
                         <div class="header">
                             <div class="row">
                             
-                                <div class="leftcolumn col-md-9" style="margin-left: auto;margin-right:auto;">
+                                <div class="leftcolumn col-md-9" style="margin-left: auto;margin-right:auto; margin-top:-115px;">
                                        
                                         <br><br><br>
                                     <?php while ($row = mysqli_fetch_assoc($sql)) { ?>
-                                        <div class="card" style="background-color: rgb(43, 138, 43);margin-top: 100px;">
+                                        <div class="card card-color-gradient" style="margin-top: 100px;">
                                         <?php
 
                                             //removing space
@@ -78,7 +76,8 @@ if ($_SESSION['sch_id']) {
                                             $caption = $row['caption'];
                                             ?>  
                                             <h2><?php echo $heading?></h2>
-                                            <h5><?php echo $description . $date?></h5>
+                                            <h5><?php echo $description ?></h5>
+                                            <p  style="font-size: 15px;"> <?php echo $date ?></p>
                                             <div class="fakeimg" style="height:200px;"><img src="<?php echo $new_str ?>" class='thumbnail' style="height:200px;" /></div>
                                             <p><?php echo $caption?></p>
                                         </div>
@@ -220,7 +219,7 @@ else {
                             if( $fileError === 0){
                                 if( $fileSize < 100000000000){
                                     $fileNameNew = uniqid('',true).".".$fileActualExt;
-                                    $fileDestination = 'C:/Users/GCKZ/Documents/php/htdocs/elibrary/users/librarian/annoucementimg/'.$fileNameNew;
+                                    $fileDestination = 'annoucementimg/'.$fileNameNew;
                                     move_uploaded_file($fileTmpName, $fileDestination);
                                 }
                                 else{

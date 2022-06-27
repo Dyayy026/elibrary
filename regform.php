@@ -33,12 +33,12 @@
                     <li class="nav-item p-2 my-auto">
                         <a class="nav-link" aria-current="page" href="index.php"> <span class="nav-link-fade-up">Home</span> </a>
                     </li>
-                    <li class="nav-item p-2 my-auto">
+                    <!-- <li class="nav-item p-2 my-auto">
                         <a class="nav-link" href="#announcements"> <span class="nav-link-fade-up"> Announcements</span></a>
                     </li>
                     <li class="nav-item p-2 my-auto">
                         <a class="nav-link" href="#books"> <span class="nav-link-fade-up">Books</span> </a>
-                    </li>
+                    </li> -->
 
                 </ul>
             </div>

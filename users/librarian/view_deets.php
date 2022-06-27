@@ -9,9 +9,9 @@
     <title>View Details</title>
     <!-- all in one links -->
     <?php include '../../templates/links.php' ?>
-
-    <link rel="stylesheet" href="../../css/sidebar-style.css">
     <link rel="stylesheet" href="../../css/viewdetails-style.css">
+    <link rel="stylesheet" href="../../css/sidebar-style.css">
+    
     <script src="../../templates/js-links.php"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -31,7 +31,7 @@
 
 
         <!-- start -->
-        <div class="container">
+        <div class="container" style="padding: 0 50px;">
 
             <form action="crud.php" method="POST">
                 <!-- php -->
@@ -72,14 +72,14 @@
                 }
                 ?>
 
-                <div class="container-fluid justify-content" id="cont-box">
+                <div class="container justify-content" id="cont-box" >
                     <div class="row">
 
-                        <div class="col-lg-4">
+                        <div class="col-lg-4 d-flex justify-content-center" >
                             <img src="<?php echo $new_str ?>" alt="Book Image" class="bk-img align-self-center">
                         </div>
-                        <div class="col-lg-8">
-                            <div class="text-wrap">
+                        <div class="col-lg-8" style="padding: 0;">
+                            <div class="text-wrap align-self-center">
                                 <p class="capitalize">Author: <?php echo $author; ?></p>
                                 <p>Category: <?php echo $category; ?></p>
                                 <p>Serial No. : <?php echo $serial; ?></p>
@@ -101,13 +101,13 @@
                     <table>
                         <tr>
                         <td>
-                                <button class="btn btn-information" id="btn-edit">
+                                <button class="btn btn-outline-info" id="btn-edit" style="background-color: #238C8F;">
                                     <a href="AAgenerateQr.php?genQr=<?php echo $n['b_id']; ?>" class="genQr_btn">Generate QR</a>
                                 </button>
                                 
                             </td>
                             <td>
-                                <button class="btn btn-dark" id="btn-edit">
+                                <button class="btn btn-dark" id="btn-edit" >
                                     <a href="edit_book.php?edit=<?php echo $n['b_id']; ?>" class="edit_btn">Edit</a>
                                 </button>
                                 

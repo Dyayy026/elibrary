@@ -42,7 +42,7 @@ if ($_SESSION['sch_id']) {
                             <label class="control-label" for="Search"><b>Search:</b></label>
                             <div class="controls">
                                 <input type="text" id="title" name="search" placeholder="Enter Roll No of Student/books Name/books Id." class="span8 form-control" required>
-                                <button type="submit" name="submit" class="btn"><i class='bx bx-search'></i></button>
+                                <button type="submit" name="submit" class="btn" style="background-color: #238C8F; border:none;"><i class='bx bx-search' ></i></button>
                             </div>
                         </div>
                     </form>

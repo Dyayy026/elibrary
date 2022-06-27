@@ -1,7 +1,7 @@
 <div class="sidebar close">
     <div class="logo-details">
         <i class='bx bxs-book'></i>
-        <span class="logo_name"><img src="../../img/logo1.png" alt=""></span>
+        <span class="logo_name"><img src="../../img/logowhite.png" alt=""></span>
     </div>
 
     <!-- search -->

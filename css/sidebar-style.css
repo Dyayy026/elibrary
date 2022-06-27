@@ -70,7 +70,7 @@ body{
   width: 7em;
   transition: 0.3s ease;
   transition-delay: 0.1s;
-  filter: drop-shadow(2px 5px 1px rgba(255, 255, 255, 0.64));
+  /* filter: drop-shadow(2px 5px 1px rgba(255, 255, 255, 0.64)); */
 }
 
 /* search */

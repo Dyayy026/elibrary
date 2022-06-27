@@ -9,9 +9,9 @@
     <title>View Details</title>
     <!-- all in one links -->
     <?php include '../../templates/links.php' ?>
-
-    <link rel="stylesheet" href="../../css/sidebar-style.css">
     <link rel="stylesheet" href="../../css/viewdetails-style.css">
+    <link rel="stylesheet" href="../../css/sidebar-style.css">
+    
     <script src="../../templates/js-links.php"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -99,7 +99,7 @@
                 <div class="container-fluid justify-content " id="cont-box">
                     <div class="row ">
 
-                        <div class="col-lg-4 print-body">
+                        <div class="col-lg-4 print-body d-flex justify-content-center">
                             <img src="<?php echo $qrcode ?>" alt="QR code" class="bk-img align-self-center" style="width:50%;">
                         </div>
                         <div class="col-lg-8">

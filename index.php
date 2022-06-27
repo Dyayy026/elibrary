@@ -21,7 +21,7 @@
   <!-- navbar -->
   <nav class="navbar navbar-expand-md navbar-light ">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src="img/pamantasan.png" width="100px" alt=""></a>
+      <a class="navbar-brand mx-5" href="#"><img src="img/Eliblogo.png" width="150px" alt=""></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -38,6 +38,9 @@
           </li> -->
           <li class="nav-item p-2 my-auto">
             <a class="nav-link " href="login.php"><button type="button" class="btn btn-outline-dark ">Login </button></a>
+          </li>
+          <li class="nav-item p-2 my-auto">
+            <a class="nav-link " href="regform.php"><button type="button" class="btn btn-outline-dark ">Register</button></a>
           </li>
         </ul>
       </div>
@@ -61,7 +64,7 @@
 
         <div class="texts ">
           <!-- texts -->
-          <p align="center">Welcome to the Pamantasan ng Lunsod ng San Pablo's E- Library. <br>
+          <p align="center">Welcome to our E-library! <br>
           Please register an account to book a schedule. Have fun reading.
         </p>
         </div>

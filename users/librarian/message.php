@@ -64,7 +64,7 @@ if ($_SESSION['sch_id']) {
 
                                 <div class="input-group">
                                     <div class="input-group">
-                                        <button type="submit" name="submit" class="btn btn-dark ">Add Message</button>
+                                        <button type="submit" name="submit" class="btn btn-dark " style="background-color: #238C8F;">Add Message</button>
                                     </div>
                                 </div>
                         </form>

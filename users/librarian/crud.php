@@ -46,7 +46,7 @@
                     //palitan ang path based sa yong pc tagalaog na yan, 
                     //maliban dito kailangan mo rin palitan ang path sa view_book.php
                     //ang variable name ay $str
-                    $fileDestination = 'D:/XAMPP/htdocs/elibrary5/users/librarian'.$fileNameNew;
+                    $fileDestination = 'uploads/'.$fileNameNew;
                     move_uploaded_file($fileTmpName, $fileDestination);
                 }
                 else{

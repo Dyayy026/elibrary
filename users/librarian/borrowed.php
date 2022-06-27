@@ -36,9 +36,9 @@ if ($_SESSION['sch_id']) {
             <div class="home-content">
                 <i class='bx bx-menu'></i>
                 <span class="text">Borrow Requests </span>
-                <div style="margin-top: 250px;">
+                <div style="margin-left: 50px;">
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary experiment" data-bs-toggle="modal" data-bs-target="#myModal" style="background-color: #238C8F;">
+                    <button type="button" class="btn btn-primary experiment btn-green-" data-bs-toggle="modal" data-bs-target="#myModal" style="background-color: #238C8F;">
                         Scan QR
                     </button>                                      
                 </div> 
@@ -154,7 +154,7 @@ else {
             }
             </style>
             <div class="row">
-            <div class="col">
+            <div class="col" style="margin-top: 20px; margin-left: 10px;">
                 <div style="width:500px;" id="reader"></div>
             </div><audio id="myAudio1">
             <source src="success.mp3" type="audio/ogg">
@@ -188,12 +188,12 @@ else {
 
 
             </script>
-            <div class="col" style="padding:30px;">
+            <div class="col" style="padding:30px; background-color: #3BC35F;">
                 <h4>SCAN RESULT</h4>
                 <div>Book Title</div>
                 <form action="">
-                    <input type="text" name="s_id" class="input" id="s_id" placeholder="School ID here" />
-                    <input type="text" name="start" class="input" id="result" onkeyup="showHint(this.value)" placeholder="Scan result here" readonly="" />
+                    <input type="text" name="s_id" class="input inp-style" id="s_id" placeholder="School ID here" />
+                    <input type="text" name="start" class="input inp-style" id="result" onkeyup="showHint(this.value)" placeholder="Scan result here" readonly="" />
                 </form>
                 <p>Status: <span id="txtHint"></span></p>
             </div>

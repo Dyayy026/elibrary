@@ -1,3 +1,21 @@
 librarian
 789-123
 admin
+
+User Accounts
+
+Librarian
+School ID: 789-123
+Password: admin
+
+Visitor
+School ID: 123 
+Password: mypassword
+
+Student
+School ID: 246
+Password: 123456
+
+Faculty Member
+School ID:888-888
+Password: faculty

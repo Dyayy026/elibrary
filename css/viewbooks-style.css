@@ -2,12 +2,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 :root {
-  --maincolor: #191e4e;
+  /* --maincolor: #191e4e;
   --secondcolor: #d6f0f1;
   --thirdcolor: #238c8f;
-  --fourthcolor: #1d1b31;
+  --fourthcolor: #1d1b31; */
   --mainfont: Rockwell;
   --bg: url("../img/home.png");
+  --offcanvas-width: 270px;
+  --topNavbarHeight: 56px;
+  --secondcolor:#D6F0F1;
+
+    /* --maincolor:#191E4E; */
+  --maincolor: #087630;
+  --secondcolor:#D6F0F1;
+  /* --thirdcolor: #238C8F; */
+  --thirdcolor: #3BC35F;
+  /* --fourthcolor:#1d1b31; */
+  --fourthcolor: #001410;
+
+  --gradient1: #62BE72;
+  --gradient2: #168486;
 }
 .home-section .cont-table {
   width: 100%;
@@ -34,7 +48,8 @@ box-shadow:  5px -5px 1px #1b6c6e,
              -5px 5px 2px #2bacb0; */
   border-radius: 5px;
 
-  background: linear-gradient(to right, #191e4e, #168486);
+  /* background: linear-gradient(to right, #191e4e, #168486); */
+  background: linear-gradient(to right, var(--gradient1), var(--gradient2));
 
   position: relative;
 }
@@ -78,19 +93,24 @@ box-shadow:  5px -5px 1px #1b6c6e,
   height: 90%;
 }
 
-.box-footer a {
-
-  margin-right: 20px;
-  margin-bottom: 20px;
-  position: absolute;
-  right: 0;
+.box-footer{
+  position: relative;
   bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0;
+}
+
+.box-footer a {
   color: var(--secondcolor);
 }
 
 .view-dt-btn{
   margin-right: 20px;
-margin-bottom: 20px;
+  margin-bottom: 20px;
   position: absolute;
   right: 0;
   bottom: 0;

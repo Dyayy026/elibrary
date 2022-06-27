@@ -101,7 +101,7 @@ if ($_SESSION['sch_id']) {
                             </div> -->
 
                         <div class="input-group">
-                            <button class="btn btn-dark" type="submit" name="submit">Add User</button>
+                            <button class="btn btn-dark" type="submit" name="submit" style="background-color: #238C8F; border:none;">Add User</button>
                         </div>
                     </div>
 

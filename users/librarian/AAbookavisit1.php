@@ -56,7 +56,7 @@ if ($_SESSION['sch_id']) {
             
             <div class="container" id="brw-table">
             <div style="margin-bottom: 20px;">
-            <button type="button" name="add" id="add" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add_data_Modal">
+            <button type="button" name="add" id="add" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add_data_Modal" style="background-color: #238C8F;">
             Book a Schedule
             </button>
             </div>
@@ -87,7 +87,7 @@ if ($_SESSION['sch_id']) {
                                     <td><?php echo $row["date_rqsted"]; ?></td>
                                     <td><?php echo $row["status"]; ?></td>
                                    
-                                    <td><input type="button" name="edit" value="Approve" id="<?php echo $row["id"];?>" class="btn btn-info btn-xs edit_data text-light" />
+                                    <td><input type="button" name="edit" value="Approve" id="<?php echo $row["id"];?>" class="btn btn-dark btn-xs edit_data text-light" />
                                     <button class="btn btn-danger"><a href="AAdeny.php?id=<?php echo $row["id"];?>" class = "text-light" style="text-decoration:none;">Deny</a></button>
                                 </td>  
                                </tr>  

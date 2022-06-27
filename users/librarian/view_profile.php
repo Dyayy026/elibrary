@@ -94,7 +94,7 @@ if ($_SESSION['sch_id']) {
                                             <!-- salamat pre <# -->
                                             <div class="row" id="cont-btn">
                                                 <div class="col-sm-3">
-                                                    <a href="edit_profile.php"><button class="btn btn-dark ">Edit Profile</button></a>
+                                                    <a href="edit_profile.php"><button class="btn btn-dark " style="background-color: #238C8F;">Edit Profile</button></a>
                                                 </div>
 
                                             </div>
