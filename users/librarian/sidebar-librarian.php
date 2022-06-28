@@ -8,7 +8,7 @@
     <div class="input-group md-3 " id="book-search">
         <form class="input-group md-3 " action="book_results.php" method="post">
             <input type="text" class="form-control" placeholder="Search Books" aria-describedby="button-addon2" name="item">
-            <button name="search" class="btn btn-outline-secondary" id="button-addon2"><i class='bx bx-search'></i></button>
+            <button name="search" class="btn btn-outline-secondary" id="button-addon2" ><i class='bx bx-search'></i></button>
         </form>
     </div>
     <ul class="nav-links">

@@ -148,7 +148,7 @@
                                 if ($fileError === 0) {
                                     if ($fileSize < 100000000000) {
                                         $fileNameNew = uniqid('', true) . "." . $fileActualExt;
-                                        $fileDestination = 'C:/xampp/htdocs/armi/users/student/uploads/' . $fileNameNew;
+                                        $fileDestination = 'users/guest/uploads/' . $fileNameNew;
                                         move_uploaded_file($fileTmpName, $fileDestination);
                                     } else {
                                         echo "File is too big";

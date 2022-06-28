@@ -137,7 +137,7 @@ if ($_SESSION['sch_id']) {
                                         if( $fileSize < 100000000000){
                                             $fileNameNew = uniqid('',true).".".$fileActualExt;
                                             //please change the path accordingly
-                                            $fileDestination = 'D:/XAMPP1/htdocs/elibrary/users/faculty/uploads/'.$fileNameNew;
+                                            $fileDestination = '../faculty/uploads/'.$fileNameNew;
                                             move_uploaded_file($fileTmpName, $fileDestination);
                                         }
                                         else{

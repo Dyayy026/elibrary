@@ -3,7 +3,7 @@
 <div class="sidebar close">
     <div class="logo-details">
         <i class='bx bxs-book'></i>
-        <span class="logo_name"><img src="../../img/logo1.png" alt=""></span>
+        <span class="logo_name"><img src="../../img/logowhite.png" alt=""></span>
     </div>
 
     <!-- search -->
@@ -28,12 +28,12 @@
 
 
         <li>
-            <a href="#">
+            <a href="AAannouncement.php">
                 <i class='bx bxs-megaphone'></i>
                 <span class="link_name">Announcements</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="/users/student//AAannouncement.php">Announcements</a></li>
+                <li><a class="link_name" href="AAannouncement.php">Announcements</a></li>
             </ul>
         </li>
 

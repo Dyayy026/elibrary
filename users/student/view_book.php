@@ -3,6 +3,7 @@
 <html lang="en" dir="ltr">
 
 <!-- PRE PAAYOS UN PATH DITO SA PAGKUHA DUN SA LIBRARIAN NA PHOTOS, DI KO KASI ALAM SAN KUNIN EH, DI SIYA NALABAS DITO -->
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
@@ -58,25 +59,27 @@
 
 
                     <div class="col-lg-5 m-4 " id="bk-box">
-                        <div class="box box-solid " >
+                        <div class="box box-solid ">
                             <div class="box-top col-md-4">
                                 <img src="<?php echo $new_str ?>" class='thumbnail' />
                             </div>
                             <div class="box-body prod-body">
-                    
+
                                 <p class="font-weight-bold" id="text"><?php echo $title ?></p>
-    
                                 <p class="font-weight-bold capitalize" id="sub-text">By: <?php echo  $author ?></p>
+
+                                <div class="box-footer h-25 align-items-center">
+                                    <!-- Button trigger view deets -->
+                                    <a class="edit_btn"></a>
+                                    <a href="view_deets.php?view=<?php echo $row['b_id']; ?>" class="edit_btn">View Details</a>
+                                </div>
+
                             </div>
                         </div>
-                        <div class="box-footer h-25">
-                            <!-- Button trigger view deets -->
-                            
-                            <a href="view_deets.php?view=<?php echo $row['b_id']; ?>" class="edit_btn">View Details</a>
-                        </div>
+
                     </div>
 
-                    <?php } ?>
+                <?php } ?>
             </div>
         </div>
 

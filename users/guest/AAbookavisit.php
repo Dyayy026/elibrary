@@ -78,7 +78,7 @@ if ($_SESSION['sch_id']) {
                        <input type="hidden" name="uid">
 
                         <div class="input-group">
-                             <button class="btn btn-dark" id="btn" name="submit">Submit Request</button>
+                             <button class="btn btn-dark" id="btn" name="submit" style="background-color: #238C8F; border: 1px transparent solid;">Submit Request</button>
                         </div>
                     </div>
 

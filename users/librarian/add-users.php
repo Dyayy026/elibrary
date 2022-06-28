@@ -136,7 +136,7 @@ if ($_SESSION['sch_id']) {
                                     if( $fileError === 0){
                                         if( $fileSize < 100000000000){
                                             $fileNameNew = uniqid('',true).".".$fileActualExt;
-                                            $fileDestination = 'C:/Users/GCKZ/Documents/php/htdocs/elibrary/users/student/uploads/'.$fileNameNew;
+                                            $fileDestination = '../student/uploads/'.$fileNameNew;
                                             move_uploaded_file($fileTmpName, $fileDestination);
                                         }
                                         else{

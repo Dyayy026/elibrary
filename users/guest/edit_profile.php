@@ -98,7 +98,7 @@ if ($_SESSION['sch_id']) { ?>
                         </div> -->
 
                         <div class="input-group">
-                            <button class="btn btn-dark" type="submit" name="update">Update</button>
+                            <button class="btn btn-dark" type="submit" name="update" style="background-color: #238C8F; border: 1px transparent solid;">Update</button>
                         </div>
                     </div>
 

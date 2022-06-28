@@ -9,9 +9,9 @@
     <title>View Details</title>
     <!-- all in one links -->
     <?php include '../../templates/links.php' ?>
-
-    <link rel="stylesheet" href="../../css/sidebar-style.css">
     <link rel="stylesheet" href="../../css/viewdetails-style.css">
+    <link rel="stylesheet" href="../../css/sidebar-style.css">
+    
     <script src="../../templates/js-links.php"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -85,10 +85,10 @@
                             <div class="container-fluid justify-content modal-body" id="cont-box" data-backdrop="static" data-keyboard="false">
                                     <div class="row">
 
-                                        <div class="col-lg-4 " >
+                                        <div class="col-lg-6 d-flex justify-content-center" >
                                             <img src="<?php echo $new_str ?>" alt="Book Image" class="bk-img">
                                         </div>
-                                        <div class="col-lg-8">
+                                        <div class="col-lg-6 " style="padding: 0;">
                                             <div class="text-wrap">
                                                 <p class="capitalize">Author: <?php echo $author; ?></p>
                                                 <p>Category: <?php echo $category; ?></p>

@@ -64,7 +64,7 @@ if ($_SESSION['sch_id']) {
                                 $school=$row['school'];   
                                 //removing space
                                 //pre paayos ulit ng path mag mumula to sa folder ng students ay thanks
-                                $str = "uploads/" . $row['photo'];
+                                $str = "../guest/uploads/" . $row['photo'];
                                 $new_str = str_replace(' ', '', $str);  
                                     
                         ?>
@@ -75,7 +75,7 @@ if ($_SESSION['sch_id']) {
                             <td><?php echo $name ?></td>
                             <td><?php echo $email ?></td>
                             <td><?php echo $school ?></td>
-                            <td><img src="<?php echo $new_str?>" alt="User Picture"></td>
+                            <td><img src="<?php echo $new_str?>" alt="User Picture" style="width:100px; height:100px; border-radius: 10px;"></td>
                             <td align="center">
                                 <?php
                                     echo "<a href=\"accept_user.php?id1=".$sch_id."\" class=\"btn btn-dark\">Accept</a>";

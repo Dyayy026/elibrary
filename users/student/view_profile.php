@@ -82,17 +82,17 @@ if ($_SESSION['sch_id']) {
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div id="password-view">
+                                                <!-- <div id="password-view">
                                                     <input type="password" value="<?php echo $pword; ?>" id="myInput">
                                                     <i class="bi bi-eye-fill" id="show" onclick="toggleHide()"></i>
                                                     <i class="bi bi-eye-slash-fill" id="hide" onclick="toggleHide()"></i>
-                                                </div>
+                                                </div> -->
                                             </div>
                                             <!-- Pre na eto un edit profile button -->
                                             <!-- salamat pre <# -->
                                             <div class="row" id="cont-btn">
                                                 <div class="col-sm-3">
-                                                    <a href="edit_profile.php"><button class="btn btn-dark ">Edit Profile</button></a>
+                                                    <a href="edit_profile.php"><button class="btn btn-dark "  style="background-color: #238C8F; border:none;">Edit Profile</button></a>
                                                 </div>
 
                                             </div>
