@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reset Password</title>
+    <title>Verify OTP</title>
     <!-- links in one  -->
     <?php include 'templates/links.php' ?>
     <link rel="stylesheet" href="css/footer.css">
@@ -62,77 +62,28 @@
                 <!-- login wrap start -->
                 <div class="login-wrap">
                     <font face="rockwell">
-                        <h1>Reset Password</h1>
+                        <h1>Verify OTP</h1>
                     </font>
                     <form action="#" method="POST">
                         <div class="form-group">
-                            <label for="text" for="email">Enter New Password</label>
-                            <input type="password" class="form-control" placeholder="Enter New Password" name="pword1" required="">
+                            <label for="text" for="email">Enter your OTP</label>
+                            <input type="text" class="form-control" placeholder="Check your email for your OTP" name="otp" required="">
                         </div>
+
                         <div class="form-group">
-                            <label class="label" for="password">Confirm Password</label>
-                            <input type="password" class="form-control" placeholder="Confirm Password" name="pword2" required="">
-                        </div>
-                        <p class=""><a href="AAforgot_pass.php">Back to Forgot Password?</a> </p>
-                        <div class="form-group">
-                            <button type="submit" class="form-control btn btn-dark submit button two" name="submit"><span>Reset</span> </button>
+                            <button type="submit" class="form-control btn btn-dark submit button two" name="verify_otp"><span>Verify</span> </button>
                         </div>
                     </form>
+
                     <hr>
+                    <p class=""><a href="AAforgot_pass.php">Back</a> </p>
+
                 </div> <!-- login wrap end -->
             </div>
             <!--form box end-->
 
         </div>
         <!--right side end xontext box-->
-
-        <?php
-    if(isset($_POST["submit"])&& $_SESSION['user']){
-
-		
-        $psw = $_POST["pword1"];
-		$psw2 = $_POST["pword2"];
-        $email = $_SESSION['user'];
-
-		if($psw == $psw2){
-
-			$sql = mysqli_query($conn, "SELECT * FROM u_details WHERE email='$email'");
-			$query = mysqli_num_rows($sql);
-			  $fetch = mysqli_fetch_assoc($sql);
-	
-			if($email){
-				$hash = md5($psw);
-				$new_pass = $hash;
-				mysqli_query($conn, "UPDATE u_details SET pword='$new_pass' WHERE email='$email'");
-				?>
-				<script>
-					alert("<?php echo "Your password reset is succesful"?>");
-					window.location.replace("login.php");
-					
-				</script>
-				<?php
-			}else{
-				?>
-				<script>
-					alert("<?php echo "Please try again"?>");
-				</script>
-				<?php
-			}
-		}
-		else{
-			?>
-				<script>
-					alert("<?php echo "Passwords did not match!"?>");
-				</script>
-				<?php
-		}
-
-    }
-
-?>
-
-
-
 
     </section>
 
@@ -146,5 +97,28 @@
 
 </html>
 
+<?php 
+    if(isset($_POST["verify_otp"])){
+        $otp = $_SESSION['otp']; 
+        $email = $_SESSION['to'];
+        $otp_code = $_POST['otp'];
 
+        if($otp != $otp_code){
+            ?>
+           <script>
+               alert("Invalid OTP code");
+           </script>
+           <?php
+        }else{
+           // mysqli_query($connect, "UPDATE user_details SET status = 1 WHERE email = '$email'");
+            ?>
+             <script>
+                 alert("OTP verified, you may now change your password");
+                   window.location.replace("AAreset_pass.php");
+             </script>
+             <?php
+        }
 
+    }
+
+?>

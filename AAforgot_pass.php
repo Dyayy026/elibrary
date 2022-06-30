@@ -17,12 +17,12 @@ if(isset($_REQUEST['send']))
     $row = $result->fetch_assoc();
 
     if ($row) {
+        $_SESSION['user'] = $row['email']; // kailangan nakasession ang email para yung record nya lang ang maupdate ang password
         ?>
-       
         <script>
         alert("<?php echo 'OTP has been sent to your email'?>");
         </script>
-         echo '<script>window.location="AAreset_pass.php"</script>';
+         echo '<script>window.location="AAverify_otp.php"</script>';
         
     </script>
     <?php
@@ -163,7 +163,7 @@ if(isset($_REQUEST['send']))
                     </form>
 
                     <hr>
-                    <p class="text-center"><a href="login.php">Back to Login...</a> </p>
+                    <p class=""><a href="login.php">Back to Login...</a> </p>
                 </div> <!-- login wrap end -->
             </div>
             <!--form box end-->
