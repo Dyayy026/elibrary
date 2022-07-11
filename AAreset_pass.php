@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Reset Password</title>
     <!-- links in one  -->
     <?php include 'templates/links.php' ?>
     <link rel="stylesheet" href="css/footer.css">
@@ -62,71 +62,74 @@
                 <!-- login wrap start -->
                 <div class="login-wrap">
                     <font face="rockwell">
-                        <h1>Login</h1>
+                        <h1>Reset Password</h1>
                     </font>
-                    <form action="login.php" method="POST">
+                    <form action="#" method="POST">
                         <div class="form-group">
-                            <label for="text" for="email">School ID No.</label>
-                            <input type="text" class="form-control" placeholder="School ID No." name="sch_id" required="">
+                            <label for="text" for="email">Enter New Password</label>
+                            <input type="password" class="form-control" placeholder="Enter New Password" name="pword1" required="">
                         </div>
-
                         <div class="form-group">
-                            <label class="label" for="password">Password</label>
-                            <input type="password" class="form-control" placeholder="Password" name="pword" required="">
+                            <label class="label" for="password">Confirm Password</label>
+                            <input type="password" class="form-control" placeholder="Confirm Password" name="pword2" required="">
                         </div>
-                        <p class=""><a href="AAforgot_pass.php">Forgot Password?</a> </p>
-
+                        <p class=""><a href="AAforgot_pass.php">Back to Forgot Password?</a> </p>
                         <div class="form-group">
-                            <button type="submit" class="form-control btn btn-dark submit button two" name="login"><span>Log in</span> </button>
+                            <button type="submit" class="form-control btn btn-dark submit button two" name="submit"><span>Reset</span> </button>
                         </div>
                     </form>
-
                     <hr>
-                    <p class="text-center">Not a member? <a href="regform.php">Register</a> </p>
                 </div> <!-- login wrap end -->
             </div>
             <!--form box end-->
 
-            
-        <!--log in code-->
-        <?php
-        if (isset($_POST['login'])) {
-            $u = $_POST['sch_id'];
-            $p = md5($_POST['pword']);
-
-            $sql = "SELECT * FROM u_details WHERE date_added IS NOT NULL AND sch_id='$u'";
-
-            $result = $conn->query($sql);
-            $row = $result->fetch_assoc();
-            $x = $row['pword'];
-            $y = $row['ut_id'];
-            if (strcasecmp($x, $p) == 0 && !empty($u) && !empty($p)) {
-                //echo "Login Successful";
-                $_SESSION['sch_id'] = $u;
-
-
-                if ($y == '1')
-                    echo '<script>window.location="users/librarian/view_profile.php"</script>';
-
-                elseif ($y == '2')
-                    echo '<script>window.location="users/student/view_profile.php"</script>';
-
-                elseif ($y == '3')
-                    echo '<script>window.location="users/guest/view_profile.php"</script>';
-                else
-                    echo '<script>window.location="users/faculty/view_profile.php"</script>';
-            } else {
-                echo "<script type='text/javascript'>alert('Failed to Login! Incorrect School ID No. or Password')</script>";
-            }
-        }
-
-        ?>
-
-
-
         </div>
         <!--right side end xontext box-->
 
+        <?php
+    if(isset($_POST["submit"])&& $_SESSION['user']){
+
+		
+        $psw = $_POST["pword1"];
+		$psw2 = $_POST["pword2"];
+        $email = $_SESSION['user'];
+
+		if($psw == $psw2){
+
+			$sql = mysqli_query($conn, "SELECT * FROM u_details WHERE email='$email'");
+			$query = mysqli_num_rows($sql);
+			  $fetch = mysqli_fetch_assoc($sql);
+	
+			if($email){
+				$hash = md5($psw);
+				$new_pass = $hash;
+				mysqli_query($conn, "UPDATE u_details SET pword='$new_pass' WHERE email='$email'");
+				?>
+				<script>
+					alert("<?php echo "Your password reset is succesful"?>");
+					window.location.replace("login.php");
+					
+				</script>
+				<?php
+			}else{
+				?>
+				<script>
+					alert("<?php echo "Please try again"?>");
+				</script>
+				<?php
+			}
+		}
+		else{
+			?>
+				<script>
+					alert("<?php echo "Passwords did not match!"?>");
+				</script>
+				<?php
+		}
+
+    }
+
+?>
 
 
 
@@ -142,3 +145,6 @@
 </body>
 
 </html>
+
+
+
