@@ -82,7 +82,7 @@
             </ul>
         </li>
 
-        <li>
+        <!-- <li>
             <a href="message.php">
                 <i class='bx bx-chat'></i>
                 <span class="link_name">Messages</span>
@@ -90,7 +90,7 @@
             <ul class="sub-menu blank">
                 <li><a class="link_name" href="message.php">Messages</a></li>
             </ul>
-        </li>
+        </li> -->
 
         <li>
                 <div class="iocn-link">
