@@ -79,6 +79,7 @@ if ($_SESSION['sch_id']) {
                                             <h5><?php echo $description ?></h5>
                                             <p  style="font-size: 15px;"> <?php echo $date ?></p>
                                             <div class="fakeimg" style="height:200px;"><img src="<?php echo $new_str ?>" class='thumbnail' style="height:200px;" /></div>
+                                            <br>
                                             <p><?php echo $caption?></p>
                                         </div>
                                         <?php } ?>
