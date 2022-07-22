@@ -77,6 +77,7 @@ if ($_SESSION['sch_id']) {
                                     <th>User Type</th>
                                     <th>E-Mail</th>
                                     <th>Date Added</th>
+                                    <th>Date Disabled</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -93,6 +94,7 @@ if ($_SESSION['sch_id']) {
                                     $usertype = $row['type'];
                                     $email = $row['email'];
                                     $date_added = $row['date_added'];
+                                    $date_disabled = $row['date_disabled'];
                                     
                         
 
@@ -104,6 +106,8 @@ if ($_SESSION['sch_id']) {
                                         <td ><?php echo $usertype?></td>
                                         <td><?php echo $email ?></td>
                                         <td><?php echo $date_added?></td>
+                                        <td><?php echo $date_disabled?></td>
+
                         
                                     </tr>
                             <?php }
