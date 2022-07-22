@@ -64,6 +64,7 @@
                 <li><a href="add-users.php">Add Student</a></li>
                 <li><a href="add-faculty.php">Add Faculty</a></li>
                 <li><a href="approve-users.php">Approve user</a></li>
+                <li><a href="AAdisabled_accounts.php">Disabled Accounts</a></li>
             </ul>
         </li>
 

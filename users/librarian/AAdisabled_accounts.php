@@ -12,7 +12,7 @@ if ($_SESSION['sch_id']) {
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="style.css">
-        <title>All Users</title>
+        <title>Disabled Accounts</title>
         <!-- all in one links -->
         <?php include '../../templates/links.php' ?>
 
@@ -30,14 +30,14 @@ if ($_SESSION['sch_id']) {
         <section class="home-section">
             <div class="home-content">
                 <i class='bx bx-menu'></i>
-                <span class="text">View All Users</span>
+                <span class="text">Disabled Accounts</span>
             </div>
             <!--end of home content-->
             <!-- start -->
             <div class="container" id="brw-table">
 
                 <div class="span9">
-                    <form action="viewall-users.php" method="post">
+                    <form action="AAdisabled_accounts.php" method="post">
                         <div class="control-group">
                             <!--<label class="control-label" for="Search"><b>Search:</b></label>-->
                             <div class="controls">
@@ -58,8 +58,8 @@ if ($_SESSION['sch_id']) {
                         $sql = "SELECT * FROM u_details INNER JOIN u_type
                         ON u_details.ut_id = u_type.ut_id WHERE date_added is NOT NULL AND sch_id='$s'";
                     } else
-                        $sql = "SELECT * FROM u_details INNER JOIN u_type
-                        ON u_details.ut_id = u_type.ut_id WHERE date_added is NOT NULL AND acc_disable is NULL ORDER BY l_name  ASC LIMIT $start_from, $limit ";
+                    $sql = "SELECT * FROM u_details INNER JOIN u_type
+                    ON u_details.ut_id = u_type.ut_id WHERE date_added is NOT NULL AND acc_disable is NOT NULL ORDER BY l_name  ASC LIMIT $start_from, $limit ";
                     $result = $conn->query($sql);
                     $rowcount = mysqli_num_rows($result);
 
@@ -77,7 +77,6 @@ if ($_SESSION['sch_id']) {
                                     <th>User Type</th>
                                     <th>E-Mail</th>
                                     <th>Date Added</th>
-                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -105,7 +104,6 @@ if ($_SESSION['sch_id']) {
                                         <td ><?php echo $usertype?></td>
                                         <td><?php echo $email ?></td>
                                         <td><?php echo $date_added?></td>
-                                        <td><a href="AAdisable_acc.php?id1=<?php echo $sch_id ?>" class="btn btn-danger">Disable Account</a></a>
                         
                                     </tr>
                             <?php }
@@ -136,7 +134,7 @@ if ($_SESSION['sch_id']) {
                                 ' 
                                 
                                 
-                                href='viewall-users.php?page=".$i."'>".$i."</a>";};
+                                href='AAdisabled_accounts.php?page=".$i."'>".$i."</a>";};
 
                                  echo $pagLink;'</div>';
                             
