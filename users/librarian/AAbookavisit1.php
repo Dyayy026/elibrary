@@ -87,7 +87,7 @@ if ($_SESSION['sch_id']) {
                                     <td><?php echo $row["date_rqsted"]; ?></td>
                                     <td><?php echo $row["status"]; ?></td>
                                    
-                                    <td><input type="button" name="edit" value="Approve" id="<?php echo $row["id"];?>" class="btn btn-dark btn-xs edit_data text-light" />
+                                    <td><input type="button" name="edit" value="Approve" id="<?php echo $row["id"];?>" class="btn btn-dark btn-xs edit_data text-light m-1" />
                                     <button class="btn btn-danger"><a href="AAdeny.php?id=<?php echo $row["id"];?>" class = "text-light" style="text-decoration:none;">Deny</a></button>
                                 </td>  
                                </tr>  

@@ -45,48 +45,51 @@ if ($_SESSION['sch_id']) {
           
             <!-- start -->
             <?php
-                $sql =mysqli_query($conn,"SELECT * FROM announcement");
+                $sql =mysqli_query($conn,"SELECT * FROM announcement ORDER BY date_posted desc");
             ?>
                
-                <div class="container " style="top: 0; position:absolute; top:15%;">
-                     
-                     <div class="container ann-cont">
-                            
-                        <div class="header">
-                            <div class="row">
-                            
-                                <div class="leftcolumn col-md-9" style="margin-left: auto;margin-right:auto; margin-top:-150px;">
-                                       
-                                        <br><br><br>
-                                    <?php while ($row = mysqli_fetch_assoc($sql)) { ?>
-                                        <div class="card card-color-gradient" style="margin-top: 100px;">
-                                        <?php
 
-                                            //removing space
-                                            $str = "../librarian/annoucementimg/" . $row['photo'];
-                                            $new_str = str_replace(' ', '', $str);
-                                            $heading = $row['heading'];
-                                            $description = $row['description'];
-                                            $date = $row['date_posted'];
-                                            $caption = $row['caption'];
-                                            ?>  
-                                            <h2><?php echo $heading?></h2>
-                                            <h5><?php echo $description ?></h5>
-                                            <p  style="font-size: 15px;"> <?php echo $date ?></p>
-                                            <div class="fakeimg" style="height:200px;"><img src="<?php echo $new_str ?>" class='thumbnail' style="height:200px;" /></div>
-                                            <p><?php echo $caption?></p>
-                                        </div>
-                                        <?php } ?>
+
+            <?php while ($row = mysqli_fetch_assoc($sql)) { ?>
+                <?php
+
+                //removing space
+                $str = "../librarian/annoucementimg/" . $row['photo'];
+                $new_str = str_replace(' ', '', $str);
+                $heading = $row['heading'];
+                $description = $row['description'];
+                $date = $row['date_posted'];
+                $caption = $row['caption'];
+                ?>
+
+                <div class="container mb-4" style="margin-top: -100px;">
+                    <div class="row d-flex align-items-center justify-content-center">
+                        <div class="col-md-6">
+                            <div class="card card-color-gradient">
+                                <div class="d-flex justify-content-between p-2 px-3">
+                                    <div class="d-flex flex-row align-items-center"> 
+                                        <div class="d-flex flex-column ml-2"> <span class="font-weight-bold fw-bolder h1 text-white"><?php echo $heading ?></span>  </div>
                                     </div>
-                                </div>
+                                    <div class="d-flex flex-row mt-1 ellipsis"> <small class="mr-2 text-white"><?php echo $date ?></small> </div>
+                                </div> 
+                                
+                                <img src="<?php echo $new_str ?>" class="img-fluid img-thumbnail rounded mx-auto d-block" width="400" height="200">
 
-                                <!-- <div class="leftcolumn col-md-9" style="margin-left: auto;margin-right:auto;">
-                                   
-                                </div> -->
+                                <div class="p-2">
+                                    <p class="text-justify fw-bold"><?php echo $description ?></p>
+                                    <hr>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                    <p class="text-justify"><?php echo $caption ?></p>
+                                       
+                                    </div>
+                                    <hr>
+                                  
+                                </div>
                             </div>
                         </div>
-                     </div>
+                    </div>
                 </div>
+            <?php } ?>
 
         </section>
         

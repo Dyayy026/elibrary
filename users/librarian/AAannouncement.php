@@ -2,9 +2,9 @@
 require('conn.php');
 ?>
 
-<?php 
+<?php
 if ($_SESSION['sch_id']) {
-    ?>
+?>
 
 
     <!DOCTYPE html>
@@ -15,7 +15,7 @@ if ($_SESSION['sch_id']) {
         <link rel="stylesheet" href="style.css">
         <title>Announcements</title>
         <!-- all in one links -->
-        <?php include '../../templates/links.php' ?> 
+        <?php include '../../templates/links.php' ?>
 
         <link rel="stylesheet" href="../../css/sidebar-style.css">
         <link rel="stylesheet" href="../../css/borrowed.css">
@@ -24,7 +24,93 @@ if ($_SESSION['sch_id']) {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <style>
+            .card {
+                border: none
+            }
+
+            .ellipsis {
+                color: #a09c9c
+            }
+
+            hr {
+                color: #a09c9c;
+                margin-top: 4px;
+                margin-bottom: 8px
+            }
+
+            .muted-color {
+                color: #a09c9c;
+                font-size: 13px
+            }
+
+            .ellipsis i {
+                margin-top: 3px;
+                cursor: pointer
+            }
+
+            .icons i {
+                font-size: 25px
+            }
+
+            .icons .fa-heart {
+                color: red
+            }
+
+            .icons .fa-smile-o {
+                color: yellow;
+                font-size: 29px
+            }
+
+            .rounded-image {
+                border-radius: 50% !important;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 50px;
+                width: 50px
+            }
+
+            .name {
+                font-weight: 600
+            }
+
+            .comment-text {
+                font-size: 12px
+            }
+
+            .status small {
+                margin-right: 10px;
+                color: blue
+            }
+
+            .form-control {
+               
+            }
+
+            .comment-input {
+                position: relative
+            }
+
+            .fonts {
+                position: absolute;
+                right: 13px;
+                top: 8px;
+                color: #a09c9c
+            }
+
+            .form-control:focus {
+                color: #495057;
+                background-color: #fff;
+                border-color: #8bbafe;
+                outline: 0;
+                box-shadow: none
+            }
+        </style>
+
+
     </head>
 
 
@@ -37,67 +123,77 @@ if ($_SESSION['sch_id']) {
             <div class="home-content">
                 <i class='bx bx-menu'></i>
                 <span class="text">Announcement </span>
-                
-                
-            </div> 
-                    <BR><BR> <BR></BR>
+
+
+            </div>
+            <BR><BR> <BR></BR>
             <!--end of home content-->
-          
+
             <!-- start -->
             <?php
-                $sql =mysqli_query($conn,"SELECT * FROM announcement");
+            $sql = mysqli_query($conn, "SELECT * FROM announcement ORDER BY date_posted desc");
             ?>
-               
-                <div class="container " style="top: 0; position:absolute; top:15%;">
-                    <div style="position:absolute; top:0; z-index: 1; left:45%;">
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary experiment" data-bs-toggle="modal" data-bs-target="#myModal" style="background-color: #238C8F;">
-                            New Announcement
-                        </button>                                      
-                    </div>       
-                     <div class="container ann-cont">
-                            
-                        <div class="header">
-                            <div class="row">
-                            
-                                <div class="leftcolumn col-md-9" style="margin-left: auto;margin-right:auto; margin-top:-115px;">
-                                       
-                                        <br><br><br>
-                                    <?php while ($row = mysqli_fetch_assoc($sql)) { ?>
-                                        <div class="card card-color-gradient" style="margin-top: 100px;">
-                                        <?php
 
-                                            //removing space
-                                            $str = "annoucementimg/" . $row['photo'];
-                                            $new_str = str_replace(' ', '', $str);
-                                            $heading = $row['heading'];
-                                            $description = $row['description'];
-                                            $date = $row['date_posted'];
-                                            $caption = $row['caption'];
-                                            ?>  
-                                            <h2><?php echo $heading?></h2>
-                                            <h5><?php echo $description ?></h5>
-                                            <p  style="font-size: 15px;"> <?php echo $date ?></p>
-                                            <div class="fakeimg" style="height:200px;"><img src="<?php echo $new_str ?>" class='thumbnail' style="height:200px;" /></div>
-                                            <p><?php echo $caption?></p>
-                                        </div>
-                                        <?php } ?>
-                                    </div>
-                                </div>
-
-                                <!-- <div class="leftcolumn col-md-9" style="margin-left: auto;margin-right:auto;">
-                                   
-                                </div> -->
-                            </div>
-                        </div>
-                     </div>
+            <div class="container " style="top: 0; position:absolute; top:15%; ">
+                <div style="position:absolute; top:0; z-index: 1; left:44%;">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary experiment" data-bs-toggle="modal" data-bs-target="#myModal" style="background-color: #238C8F;">
+                        New Announcement
+                    </button>
                 </div>
 
+            </div>
+
+
+            <br><br><br>
+            <?php while ($row = mysqli_fetch_assoc($sql)) { ?>
+                <?php
+
+                //removing space
+                $str = "annoucementimg/" . $row['photo'];
+                $new_str = str_replace(' ', '', $str);
+                $heading = $row['heading'];
+                $description = $row['description'];
+                $date = $row['date_posted'];
+                $caption = $row['caption'];
+                ?>
+
+                <div class="container mb-4" style="margin-top: -100px;">
+                    <div class="row d-flex align-items-center justify-content-center">
+                        <div class="col-md-6">
+                            <div class="card card-color-gradient">
+                                <div class="d-flex justify-content-between p-2 px-3">
+                                    <div class="d-flex flex-row align-items-center"> 
+                                        <div class="d-flex flex-column ml-2"> <span class="font-weight-bold fw-bolder h1 text-white"><?php echo $heading ?></span>  </div>
+                                    </div>
+                                    <div class="d-flex flex-row mt-1 ellipsis"> <small class="mr-2 text-white"><?php echo $date ?></small> </div>
+                                </div> 
+                                
+                                <img src="<?php echo $new_str ?>" class="img-fluid img-thumbnail rounded mx-auto d-block" width="400" height="200">
+
+                                <div class="p-2">
+                                    <p class="text-justify fw-bold"><?php echo $description ?></p>
+                                    <hr>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                    <p class="text-justify"><?php echo $caption ?></p>
+                                       
+                                    </div>
+                                    <hr>
+                                  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
+
+
+
         </section>
-        
 
 
-        
+
+
 
 
 
@@ -121,6 +217,8 @@ if ($_SESSION['sch_id']) {
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
         <script src="../../templates/js-links.php"></script>
 
+
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         
     </body>
 
@@ -128,165 +226,120 @@ if ($_SESSION['sch_id']) {
 
 
 
-<?php }
-else {
+<?php } else {
     echo "<script type='text/javascript'>alert('Access Denied!!!')</script>";
 } ?>
 
 
 <!-- The Modal -->
 <div class="modal fade" id="myModal">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
 
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Add Announcement</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Add Announcement</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
 
-      <!-- Modal body -->
-      <div class="modal-body">
-    <!-- start -->
-    <div class="container cont-editprofile">
+            <!-- Modal body -->
+            <div class="modal-body">
+                <!-- start -->
+                <div class="container cont-editprofile">
 
-<form action="AAannouncement.php" method="POST" enctype="multipart/form-data">
+                    <form action="AAannouncement.php" method="POST" enctype="multipart/form-data">
 
-    <div class="container ">
+                        <div class="container ">
 
-        <div class="input-group">
-            <!--  -->
-        </div>
+                            <div class="input-group">
+                                <!--  -->
+                            </div>
 
-        <div class="input-group">
-            <label>Heading</label>
-            <input class="form-control" type="text" name="heading" value="">
-        </div>
+                            <div class="input-group">
+                                <label>Heading</label>
+                                <input class="form-control" type="text" name="heading" value="">
+                            </div>
 
-        <div class="input-group">
-            <label>Description</label>
-            <input class="form-control" type="text" name="description" value="">
-        </div>
+                            <div class="input-group">
+                                <label>Description</label>
+                                <input class="form-control" type="text" name="description" value="">
+                            </div>
 
-        <div class="input-group">
-            <label>Image</label>
-            <input type="file" name="photo" value="" class=" form-control"  aria-label="Upload">
-        </div>
+                            <div class="input-group">
+                                <label>Image</label>
+                                <input type="file" name="photo" value="" class=" form-control" aria-label="Upload">
+                            </div>
 
-        <div class="input-group">
-            <label>Caption</label>
-            <input class="form-control" type="text" name="caption" value="">
-        </div>
+                            <div class="input-group">
+                                <label>Caption</label>
+                                <input class="form-control" type="text" name="caption" value="">
+                            </div>
 
 
-        <!-- Pre Just in case magbago isip mo na gusto mo na napapaltan un profile pre -->
-        <!-- Ayoko nga-->
-        <!-- Photo Update -->
-        <!-- <div class="input-group">
-                <label for="text">Upload Photo</label>
-                <br>
-                <input id="input-style" class="form-control" type="file" id="formFile" name="photo">
-            </div> -->
+                            <div class="input-group">
+                                <button class="btn btn-dark" type="submit" name="submit">Announce</button>
+                            </div>
+                        </div>
 
-        <div class="input-group">
-            <button class="btn btn-dark" type="submit" name="submit">Announce</button>
+                        <!--add user code here-->
+                        <?php
+                        if (isset($_POST['submit'])) {
+                            $heading = $_POST['heading'];
+                            $description = $_POST['description'];
+                            $caption = $_POST['caption'];
+                            $date_created = date('Y-m-d');
+
+
+                            //insert photo
+                            $fileName = $_FILES['photo']['name'];
+                            $fileTmpName = $_FILES['photo']['tmp_name'];
+                            $fileSize = $_FILES['photo']['size'];
+                            $fileError = $_FILES['photo']['error'];
+                            $fileType = $_FILES['photo']['type'];
+
+                            $fileExt = explode('.', $fileName);
+                            $fileActualExt = strtolower(end($fileExt));
+
+                            $allowed = array('jpg', 'jpeg', 'png');
+
+                            if (in_array($fileActualExt, $allowed)) {
+                                if ($fileError === 0) {
+                                    if ($fileSize < 100000000000) {
+                                        $fileNameNew = uniqid('', true) . "." . $fileActualExt;
+                                        $fileDestination = 'annoucementimg/' . $fileNameNew;
+                                        move_uploaded_file($fileTmpName, $fileDestination);
+                                    } else {
+                                        echo "File is too big";
+                                    }
+                                } else {
+                                    echo "Error uploading the file";
+                                }
+                            } else {
+                                echo "File type not accepted";
+                            }
+
+                            $sql = "INSERT INTO announcement(heading,description,date_posted,photo,caption) VALUES ('$heading','$description','$date_created','$fileNameNew','$caption')";
+
+                            if ($conn->query($sql) === TRUE) {
+                                echo "<script type='text/javascript'>Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'success',
+                                    title: 'Announcement Created',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                  })</script>";
+                            } else {
+                                echo "Error: " . $sql . "<br>" . $conn->error;
+                                echo "<script type='text/javascript'>alert('Post Failed')</script>";
+                            }
+                        }
+                        ?>
+                    </form>
+                </div>
+            </div>
+
+
+
         </div>
     </div>
-
-            <!--add user code here-->
-                <?php
-                    if(isset($_POST['submit']))
-                    {
-                        $heading=$_POST['heading'];
-                        $description=$_POST['description'];
-                        $caption=$_POST['caption'];
-                        $date_created= date('Y-m-d');
-                        
-
-                        //insert photo
-                        $fileName = $_FILES['photo']['name'];
-                        $fileTmpName = $_FILES['photo']['tmp_name'];
-                        $fileSize = $_FILES['photo']['size'];
-                        $fileError = $_FILES['photo']['error'];
-                        $fileType = $_FILES['photo']['type'];
-
-                        $fileExt = explode('.', $fileName);
-                        $fileActualExt = strtolower(end($fileExt));
-
-                        $allowed = array('jpg', 'jpeg', 'png');
-
-                        if (in_array($fileActualExt, $allowed)){
-                            if( $fileError === 0){
-                                if( $fileSize < 100000000000){
-                                    $fileNameNew = uniqid('',true).".".$fileActualExt;
-                                    $fileDestination = 'annoucementimg/'.$fileNameNew;
-                                    move_uploaded_file($fileTmpName, $fileDestination);
-                                }
-                                else{
-                                    echo "File is too big";
-                                }
-                            }
-                            else{
-                                echo "Error uploading the file";
-                            }
-                        }
-                        else{
-                            echo "File type not accepted";
-                        }
-                    
-                        $sql="INSERT INTO announcement(heading,description,date_posted,photo,caption) VALUES ('$heading','$description','$date_created','$fileNameNew','$caption')";
-                    
-                        if ($conn->query($sql) === TRUE) {
-                        echo "<script type='text/javascript'>alert('Posted Successfully!')</script>";
-                        } else {
-                            echo "Error: " . $sql . "<br>" . $conn->error;
-                        echo "<script type='text/javascript'>alert('Post Failed')</script>";
-                        }
-                        }
-                ?>
-        </form>
-        </div>
-      </div>
-
-     
-
-    </div>
-  </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

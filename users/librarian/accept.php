@@ -39,7 +39,13 @@ if($conn->query($sql2) === TRUE)
  $result=$conn->query($sql4);
  $sql6="INSERT INTO message (sch_id,msg,msg_date,time) VALUES ('$sch_id','Your request to borrow book: $title has been accepted',curdate(),curtime())";
  $result=$conn->query($sql6);
-echo "<script type='text/javascript'>alert('Success')</script>";
+echo "<script type='text/javascript'>Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'Accepted',
+    showConfirmButton: false,
+    timer: 1500
+  })</script>";
 header( "Refresh:1; url=borrowed.php", true, 303);
 }
 else
