@@ -3,7 +3,7 @@ session_start();
 $dbservername = "localhost";
 $dbusername = "root";
 $dbpassword = "";
-$dbname = "library";
+$dbname = "library1";
 // Create connection
 $conn = mysqli_connect($dbservername, $dbusername, $dbpassword, $dbname);
 // Check connection
