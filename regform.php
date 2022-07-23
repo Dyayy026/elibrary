@@ -95,10 +95,10 @@
                                         <input id="input-style" type="text" class="form-control" name="email" placeholder="Enter Email" required="" >
                                     </div>
                                     <span id="email-check"></span>
-                                    <div class="form-group">
+                                    <!-- <div class="form-group">
                                         <label for="text">Password</label>
                                         <input id="input-style" type="password" class="form-control" name="pword" placeholder="Enter Password" required="">
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <div class="col ">
 
@@ -129,7 +129,7 @@
                             $sch_id = $_POST['sch_id'];
                             $school = $_POST['school'];
                             $email = $_POST['email'];
-                            $pword = $_POST['pword'];
+                            $pword = $sch_id;
                             $pencrypt = md5($pword);
 
                             //insert photo
@@ -166,7 +166,7 @@
                             $sql = "INSERT INTO u_details(ut_id,f_name,m_in,l_name,sch_id,school,email,pword,photo) VALUES ('$ut_id','$fname','$mname','$lname','$sch_id','$school','$email', '$pencrypt','$fileNameNew')";
 
                             if ($conn->query($sql) === TRUE) {
-                                echo "<script type='text/javascript'> Swal.fire('Registration sent to admin', 'Thank you' ,'success').then(function(){window.location = 'processing.php'}); </script>";
+                                echo "<script type='text/javascript'> Swal.fire('Registration sent to admin. Your school id is your default password. Please change immediately.', 'Thank you' ,'success').then(function(){window.location = 'processing.php'}); </script>";
                                 //echo '<script>window.location="processing.php"</script>';
                                 //echo "<script type='text/javascript'> Swal.fire({position: 'bottom-end', icon: 'info',  title: 'Your work has been saved'}) </script>";
                             } else {
