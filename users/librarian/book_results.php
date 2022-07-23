@@ -40,57 +40,67 @@
 
 
                 <!-- sql query-->
-                <?php 
+                <?php
 
-                    if (isset($_POST['search'])) {
-                        $item = $_POST['item'];
-                        $results = mysqli_query($db, "SELECT * FROM books 
+                if (isset($_POST['search'])) {
+                    $item = $_POST['item'];
+                    $results = mysqli_query($db, "SELECT * FROM books 
                         INNER JOIN categories ON books.cat_id = categories.cat_id
                         WHERE category='$item' OR title LIKE '%$item%'");
 
 
-                        while ($row = mysqli_fetch_assoc($results)) { ?>
+                    while ($row = mysqli_fetch_assoc($results)) { ?>
 
                         <?php
-                                //removing space
-                                $str = "uploads/" . $row['photo'];
-                                $new_str = str_replace(' ', '', $str);
-                                $title = $row['title'];
-                                $author = $row['author'];
-                                $pub_year = $row['pub_year'];
-                                $category = $row['category'];
-                                $copies_owned = $row['copies_owned'];
-                                $copies_avlbl = $row['copies_avlbl'];
-                                $date_added = $row['date_added'];
+                        //removing space
+                        $str = "uploads/" . $row['photo'];
+                        $new_str = str_replace(' ', '', $str);
+                        $title = $row['title'];
+                        $author = $row['author'];
+                        $pub_year = $row['pub_year'];
+                        $category = $row['category'];
+                        $copies_owned = $row['copies_owned'];
+                        $copies_avlbl = $row['copies_avlbl'];
+                        $date_added = $row['date_added'];
 
-                                ?>
+                        ?>
 
 
-                                <div class="col-lg-5 m-4 " id="bk-box">
-                                    <div class="box box-solid ">
-                                        <div class="box-top col-md-4">
-                                            <img src="<?php echo $new_str ?>" class='thumbnail' />
-                                        </div>
-                                        <div class="box-body prod-body">
+                        <div class="col-lg-5 m-4 " id="bk-box">
+                            <div class="box box-solid ">
+                                <div class="box-top col-md-4">
+                                    <img src="<?php echo $new_str ?>" class='thumbnail' />
+                                </div>
+                                <div class="box-body prod-body ">
+                                    <p class="font-weight-bold " id="text"><?php echo $title ?></p>
+                                    <p class="font-weight-bold capitalize" id="sub-text"><?php echo "By: " . $author ?></p>
 
-                                            <p class="font-weight-bold" id="text"><?php echo $title ?></p>
+                                    <div class="box-footer h-25   align-items-center">
+                                        <!-- print qr button -->
+                                        <a href="printqr.php?view=<?php echo $row['b_id']; ?>" style="color:white;">Print QR code</a>
+                                        <!-- Button trigger view deets -->
+                                        <a href="view_deets.php?view=<?php echo $row['b_id']; ?>" class="edit_btn">View Details</a>
 
-                                            <p class="font-weight-bold capitalize" id="sub-text"><?php echo "By: " . $author ?></p>
-                                        </div>
-                                        <div class="box-footer h-25 ">
-                                            <!-- Button trigger view deets -->
-                                            <a href="view_deets.php?view=<?php echo $row['b_id']; ?>" class="edit_btn">View Details</a>
-                                        </div>
+
                                     </div>
 
                                 </div>
 
-                        <?php } ?>          
-                        
 
 
-                    <?php } ?> 
-                
+
+
+
+                            </div>
+
+                        </div>
+
+                    <?php } ?>
+
+
+
+                <?php } ?>
+
             </div>
         </div>
 
