@@ -74,11 +74,7 @@ if ($_SESSION['sch_id']) {
                             <input class="form-control" type="text" name="sch_id1" value=""required>
                         </div>
 
-                        <div class="input-group">
-                            <label>Default Password</label>
-                            <input class="form-control" type="password" name="pword" value=""required>
-                        </div>
-
+    
                         <div class="input-group">
                             <label>Date Added</label>
                             <input class="form-control" type="date" name="date_added" value=""required>
@@ -158,7 +154,7 @@ if ($_SESSION['sch_id']) {
                                 $sql="INSERT INTO u_details(ut_id,f_name,m_in,l_name,sch_id,school,email,pword,date_added,photo) VALUES ('$ut_id','$fname','$mname','$lname','$sch_id1','$school','$email', '$pencrypt','$date_added','$fileNameNew')";
                             
                                 if ($conn->query($sql) === TRUE) {
-                                echo "<script type='text/javascript'>alert('Faculty Added')</script>";
+                                echo "<script type='text/javascript'>alert('Faculty Added. Id is the default password')</script>";
                                 } else {
                                     echo "Error: " . $sql . "<br>" . $conn->error;
                                 echo "<script type='text/javascript'>alert('User Exists')</script>";
