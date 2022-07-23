@@ -104,7 +104,7 @@
                         </td>
                         <td>
                             <br><br>
-                        <button type="submit" class="form-control btn btn-dark submit button two" name="login"><span>Back to Login</span> </button>
+                        <button type="submit" class="form-control btn btn-dark submit button two" name="login"><span><a href="../../login.php" style="text-decoration: none;">Back to Login</a></span> </button>
                         </td>
 
                        
