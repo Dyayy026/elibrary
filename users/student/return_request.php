@@ -5,7 +5,7 @@ $id=$_GET['id'];
 
 $sch_id=$_SESSION['sch_id'];
 
-$sql="INSERT INTO returnS (sch_id,b_id) VALUES ('$sch_id','$id')";
+$sql="INSERT INTO returns (sch_id,b_id) VALUES ('$sch_id','$id')";
 
 if($conn->query($sql) === TRUE)
 {

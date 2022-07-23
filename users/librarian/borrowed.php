@@ -47,6 +47,11 @@ if ($_SESSION['sch_id']) {
             
             <!-- start -->
             <div class="container" id="brw-table"> 
+                <?php 
+                        $limit = 5;  
+                        if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };  
+                        $start_from = ($page-1) * $limit; 
+                    ?>
                 <table id="example" class="table table-hover " >
                     <thead>
                         <tr>
@@ -59,7 +64,7 @@ if ($_SESSION['sch_id']) {
                     </thead>
                     <tbody>
                         <?php
-                            $sql="SELECT * FROM borrowed, books WHERE bw_date IS NULL AND borrowed.b_id=books.b_id ORDER BY time";
+                            $sql="SELECT * FROM borrowed, books WHERE bw_date IS NULL AND borrowed.b_id=books.b_id ORDER BY time ASC LIMIT $start_from, $limit";
                             $result=$conn->query($sql);
                             while($row=$result->fetch_assoc())
                             {
@@ -91,20 +96,35 @@ if ($_SESSION['sch_id']) {
                         
                     </tbody>
                   
-                    <!-- just in case gusto mo parin ng may footer pre -->
-                    <!-- Ayoko pre -->
-                    <!-- <tfoot>
-                        <tr>
-                            <th>Ref ID</th>
-                            <td>Copies</td>
-                            <th>Returnee</th>
-                            <th>Issuer</th>
-                            <th>Issue Date</th>
-                            <th>Return Date</th>
-                            <th>Fine</th>
-                        </tr>
-                    </tfoot> -->
                 </table>
+                <?php 
+                //dito lang nagana css
+                $sql = "SELECT COUNT(bw_id) FROM borrowed WHERE bw_date IS NULL";  
+                $rs_result = mysqli_query($conn, $sql);  
+                $row = mysqli_fetch_row($rs_result);  
+                $total_records = $row[0];  
+                $total_pages = ceil($total_records / $limit);  
+                $pagLink = "<div class='pagination'>";
+
+                for($i=1; $i<=$total_pages; $i++){
+                    $pagLink .= "<a style='text-decoration:none;
+                    padding: 5px;
+                    margin:1px;
+                    border-radius: 5px;
+                    border: 1px solid #238C8F;
+                    
+                    color: #238C8F;
+                    margin-right: 0.50em;
+                    
+
+                    ' 
+                    
+                    
+                    href='borrowed.php?page=".$i."'>".$i."</a>";};
+
+                        echo $pagLink;'</div>';
+                
+                ?>
             </div>
     
         </section>

@@ -47,7 +47,11 @@ if ($_SESSION['sch_id']) {
 
             <!-- start -->
                 <div class="container" id="brw-table">
-                      
+                    <?php 
+                        $limit = 5;  
+                        if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };  
+                        $start_from = ($page-1) * $limit; 
+                    ?>
                     <table id="example" class="table table-hover " >
                                   <thead>
                                     <tr>
@@ -100,6 +104,34 @@ if ($_SESSION['sch_id']) {
                                <?php } ?>
                                </tbody>
                                 </table>
+                                <?php 
+                                    //dito lang nagana css
+                                    $sql = "SELECT COUNT(bw_id) FROM borrowed WHERE rtn_date IS NOT NULL";  
+                                    $rs_result = mysqli_query($conn, $sql);  
+                                    $row = mysqli_fetch_row($rs_result);  
+                                    $total_records = $row[0];  
+                                    $total_pages = ceil($total_records / $limit);  
+                                    $pagLink = "<div class='pagination'>";
+
+                                    for($i=1; $i<=$total_pages; $i++){
+                                        $pagLink .= "<a style='text-decoration:none;
+                                        padding: 5px;
+                                        margin:1px;
+                                        border-radius: 5px;
+                                        border: 1px solid #238C8F;
+                                    
+                                        color: #238C8F;
+                                        margin-right: 0.50em;
+                                        
+
+                                        ' 
+                                        
+                                        
+                                        href='return_request.php?page=".$i."'>".$i."</a>";};
+
+                                        echo $pagLink;'</div>';
+                                    
+                                    ?>
                             </div>
                     <!--/.span3-->
                     <!--/.span9-->
