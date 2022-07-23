@@ -67,6 +67,7 @@ if ($_SESSION['sch_id']) {
                                 $sch_id=$row['sch_id'];
                                 $title=$row['title'];
                                 $avail=$row['copies_avlbl'];
+                                $bw_id=$row['bw_id'];
                                 
                                     
                         ?>
@@ -80,7 +81,7 @@ if ($_SESSION['sch_id']) {
                             <td align="center">
                                 <?php
                                     if($avail > 0)
-                                    {echo "<a href=\"accept.php?id1=".$b_id."&id2=".$sch_id."&id3=".$title."\" class=\"btn btn-dark\">Accept</a>";}
+                                    {echo "<a href=\"accept.php?id1=".$b_id."&id2=".$sch_id."&id3=".$title."&id4=".$bw_id."\" class=\"btn btn-dark\">Accept</a>";}
                                     else{ echo "<script type='text/javascript'>alert('No Copies Available!!!')</script>";}
                                 ?></td>
                             <td align="center"><a href="reject.php?id1=<?php echo $b_id ?>&id2=<?php echo $sch_id ?>&id3=<?php echo $title ?>" class="btn btn-danger">Reject</a></td>

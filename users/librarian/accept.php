@@ -4,6 +4,7 @@ require('conn.php');
 $b_id=$_GET['id1'];
 $sch_id=$_GET['id2'];
 $title=$_GET['id3'];
+$bw_id=$_GET['id4'];
 
 $sql="SELECT ut_id FROM u_details WHERE sch_id='$sch_id'";
 $result=$conn->query($sql);
@@ -14,7 +15,7 @@ $category=$row['ut_id'];
 
 
 if($category == '2' || $category == '3' || $category == '4' )
-{$sql1="UPDATE borrowed SET bw_date=curdate(), bw_due=date_add(curdate(),interval 60 day) where b_id='$b_id' and sch_id='$sch_id'";
+{$sql1="UPDATE borrowed SET bw_date=curdate(), bw_due=date_add(curdate(),interval 60 day) where b_id='$b_id' and sch_id='$sch_id' and bw_id='$bw_id'";
  
 if($conn->query($sql1) === TRUE)
 {$sql3="UPDATE books SET copies_avlbl=copies_avlbl-1 WHERE b_id='$b_id'";

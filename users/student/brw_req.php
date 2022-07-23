@@ -3,6 +3,7 @@ require('conn.php');
 
 $id=$_GET['id'];
 
+
 $sch_id=$_SESSION['sch_id'];
 
 $sql="INSERT INTO borrowed (sch_id,b_id,time) VALUES ('$sch_id','$id', curtime())";
