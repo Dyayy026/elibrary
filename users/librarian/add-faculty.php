@@ -51,37 +51,33 @@ if ($_SESSION['sch_id']) {
 
                         <div class="input-group">
                             <label>First Name</label>
-                            <input class="form-control" type="text" name="fname" value="">
+                            <input class="form-control" type="text" name="fname" value=""required>
                         </div>
 
                         <div class="input-group">
                             <label>Middle Initial</label>
-                            <input class="form-control" type="text" name="mname" value="">
+                            <input class="form-control" type="text" name="mname" value=""required>
                         </div>
 
                         <div class="input-group">
                             <label>Last Name</label>
-                            <input class="form-control" type="text" name="lname" value="">
+                            <input class="form-control" type="text" name="lname" value=""required>
                         </div>
 
                         <div class="input-group">
                             <label>Email</label>
-                            <input class="form-control" type="email" name="email" value="">
+                            <input class="form-control" type="email" name="email" value=""required>
                         </div>
 
                         <div class="input-group">
                             <label>Employee ID.</label>
-                            <input class="form-control" type="text" name="sch_id1" value="">
+                            <input class="form-control" type="text" name="sch_id1" value=""required>
                         </div>
 
-                        <div class="input-group">
-                            <label>Default Password</label>
-                            <input class="form-control" type="password" name="pword" value="">
-                        </div>
-
+    
                         <div class="input-group">
                             <label>Date Added</label>
-                            <input class="form-control" type="date" name="date_added" value="">
+                            <input class="form-control" type="date" name="date_added" value=""required>
                         </div>
 
                         <div class="input-group">
@@ -117,7 +113,7 @@ if ($_SESSION['sch_id']) {
                                 $school='PLSP';
                                 $email=$_POST['email'];
                                 $date_added=$_POST['date_added'];
-                                $pword=$_POST['pword'];
+                                $pword=$sch_id1;
                                 $pencrypt = md5($pword);
 
                                  //insert photo
@@ -158,7 +154,7 @@ if ($_SESSION['sch_id']) {
                                 $sql="INSERT INTO u_details(ut_id,f_name,m_in,l_name,sch_id,school,email,pword,date_added,photo) VALUES ('$ut_id','$fname','$mname','$lname','$sch_id1','$school','$email', '$pencrypt','$date_added','$fileNameNew')";
                             
                                 if ($conn->query($sql) === TRUE) {
-                                echo "<script type='text/javascript'>alert('Faculty Added')</script>";
+                                echo "<script type='text/javascript'>alert('Faculty Added. Id is the default password')</script>";
                                 } else {
                                     echo "Error: " . $sql . "<br>" . $conn->error;
                                 echo "<script type='text/javascript'>alert('User Exists')</script>";
