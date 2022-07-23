@@ -77,7 +77,7 @@
                         <p class=""><a href="AAforgot_pass.php">Forgot Password?</a> </p>
 
                         <div class="form-group">
-                            <button type="submit" class="form-control btn btn-dark submit button two" name="login"><span>Log in</span> </button>
+                            <button type="submit" class="form-control btn btn-dark submit" name="login"><span>Log in</span> </button>
                         </div>
                     </form>
 

@@ -56,11 +56,64 @@
 
         <!-- right side start content box -->
         <div class="col cont-box">
+            <?php
+                 $sql = "SELECT * FROM u_details INNER JOIN u_type
+                 ON u_details.ut_id = u_type.ut_id WHERE date_added is NOT NULL AND acc_disable is NOT NULL ORDER BY l_name  ";
+                 $result = $conn->query($sql);
+                 $rowcount = mysqli_num_rows($result);
+
+                 if (!($rowcount))
+                 echo "<br><center><h2><b><i>No Results</i></b></h2></center>";
+             else {
+
+
+             ?>
+
+                         <?php
+
+
+
+                         //$result=$conn->query($sql);
+                         while ($row = $result->fetch_assoc()) {
+                             $sch_id = $row['sch_id'];
+                             $name = $row['f_name']." ".$row['m_in']." ".$row['l_name'];
+                             $usertype = $row['type'];
+                             $email = $row['email'];
+                             $date_added = $row['date_added'];
+                             $date_disabled = $row['date_disabled'];
+
+                         ?>
+                       
+                         
+                     <?php }
+                     } 
+                     ?>
+                     <h1 style="margin-top: 250px;">Your Account has been disabled</h1>
+                     <tr>
+                        <td>
+                           <h4>Account Name: <i><?php echo $name;?></i></h4>  <h4></h4>
+                        </td>
+                        <td>
+                        <h4>Email: <i><?php echo $email;?></i></h4>  <h4></h4>
+                        </td>
+                        <td>
+                            <h4>School ID: <i><?php echo $sch_id;?></i></h4></h4>
+                        </td>
+                        <td>
+                        <h4>Date Disabled: <i><?php echo $date_disabled;?></i></h4></h4>
+                        </td>
+                        <td>
+                            <br><br>
+                        <button type="submit" class="form-control btn btn-dark submit button two" name="login"><span>Back to Login</span> </button>
+                        </td>
+
+                       
+                     </tr>
+            
 
 
             <div class="col">
                 
-                <h1>Your Account has been disabled.</h1>
             </div>
         </div>
         <!--right side end xontext box-->
