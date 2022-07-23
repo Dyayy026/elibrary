@@ -22,6 +22,7 @@ if ($_SESSION['sch_id']) {
         <link rel="stylesheet" href="../../css/profileview-style.css">
         <script src="../../templates/js-links.php"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
     </head>
 
 
@@ -120,6 +121,8 @@ if ($_SESSION['sch_id']) {
         </section>
 
 
+
+
         <!-- side nav showing and sub menus -->
         <script>
             let arrow = document.querySelectorAll(".arrow");
@@ -168,6 +171,9 @@ if ($_SESSION['sch_id']) {
         </script>
 
         <script src="../../templates/js-links.php"></script>
+
+        <!-- Sweet Alert -->
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
     </body>
