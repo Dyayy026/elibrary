@@ -51,37 +51,37 @@ if ($_SESSION['sch_id']) {
 
                         <div class="input-group">
                             <label>First Name</label>
-                            <input class="form-control" type="text" name="fname" value="">
+                            <input class="form-control" type="text" name="fname" value=""required>
                         </div>
 
                         <div class="input-group">
                             <label>Middle Initial</label>
-                            <input class="form-control" type="text" name="mname" value="">
+                            <input class="form-control" type="text" name="mname" value=""required>
                         </div>
 
                         <div class="input-group">
                             <label>Last Name</label>
-                            <input class="form-control" type="text" name="lname" value="">
+                            <input class="form-control" type="text" name="lname" value=""required>
                         </div>
 
                         <div class="input-group">
                             <label>Email</label>
-                            <input class="form-control" type="email" name="email" value="">
+                            <input class="form-control" type="email" name="email" value=""required>
                         </div>
 
                         <div class="input-group">
                             <label>Employee ID.</label>
-                            <input class="form-control" type="text" name="sch_id1" value="">
+                            <input class="form-control" type="text" name="sch_id1" value=""required>
                         </div>
 
                         <div class="input-group">
                             <label>Default Password</label>
-                            <input class="form-control" type="password" name="pword" value="">
+                            <input class="form-control" type="password" name="pword" value=""required>
                         </div>
 
                         <div class="input-group">
                             <label>Date Added</label>
-                            <input class="form-control" type="date" name="date_added" value="">
+                            <input class="form-control" type="date" name="date_added" value=""required>
                         </div>
 
                         <div class="input-group">

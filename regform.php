@@ -1,4 +1,4 @@
-<?php require('conn.php'); ?>
+<?php require('conn.php');?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -161,19 +161,35 @@
                             }
 
 
+                            if(filter_var($email, FILTER_VALIDATE_EMAIL)){
+                                $sql3 = "SELECT * FROM u_details WHERE email = '$email'";
+                                $result= mysqli_query($conn, $sql3);
+                                $num = mysqli_num_rows($result);
 
+                              
 
-                            $sql = "INSERT INTO u_details(ut_id,f_name,m_in,l_name,sch_id,school,email,pword,photo) VALUES ('$ut_id','$fname','$mname','$lname','$sch_id','$school','$email', '$pencrypt','$fileNameNew')";
+                                if($num >= 1){
+                                    echo "<script type='text/javascript'> Swal.fire('Registration failed! Email provided is not availabe', 'Try again' ,'error').then(function(){window.location = 'regform.php'}); </script>";
+                                }else{
+                                    $sql = "INSERT INTO u_details(ut_id,f_name,m_in,l_name,sch_id,school,email,pword,photo) VALUES ('$ut_id','$fname','$mname','$lname','$sch_id','$school','$email', '$pencrypt','$fileNameNew')";
 
-                            if ($conn->query($sql) === TRUE) {
-                                echo "<script type='text/javascript'> Swal.fire('Registration sent to admin. Your school id is your default password. Please change immediately.', 'Thank you' ,'success').then(function(){window.location = 'processing.php'}); </script>";
-                                //echo '<script>window.location="processing.php"</script>';
-                                //echo "<script type='text/javascript'> Swal.fire({position: 'bottom-end', icon: 'info',  title: 'Your work has been saved'}) </script>";
-                            } else {
-                                echo "Error: " . $sql . "<br>" . $conn->error;
-                                echo "<script type='text/javascript'> Swal.fire('User Already Exist', 'Make sure you enter the right ID', 'error').then(function(){window.location = 'processing.php'}); </script>";
+                                    if ($conn->query($sql) === TRUE) {
+                                       
+
+                                        echo "<script type='text/javascript'> Swal.fire('Registration sent to admin. Your school id is your default password. Please change immediately', 'Thank you' ,'success').then(function(){window.location = 'processing.php'}); </script>";
+                                        //echo '<script>window.location="processing.php"</script>';
+                                        //echo "<script type='text/javascript'> Swal.fire({position: 'bottom-end', icon: 'info',  title: 'Your work has been saved'}) </script>";
+                                    }else{
+
+                                        echo "Error: " . $sql . "<br>" . $conn->error;
+                                        echo "<script type='text/javascript'> Swal.fire('User Already Exist', 'Make sure you enter the right ID', 'error').then(function(){window.location = 'processing.php'}); </script>";
+                                    }
+                                }
+                            }else {
+                                echo "Invalid Email";
                             }
                         }
+                        
 
 
                         ?>
