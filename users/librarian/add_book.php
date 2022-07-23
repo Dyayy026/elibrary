@@ -71,42 +71,42 @@
 
                 <div class="input-group">
                     <label>Title</label>
-                    <input type="text" name="title" value="" class=" form-control">
+                    <input type="text" name="title" value="" class=" form-control" required>
                 </div>
 
                 <div class="input-group">
                     <label>Author</label>
-                    <input type="text" name="author" value="" class=" form-control">
+                    <input type="text" name="author" value="" class=" form-control" required>
                 </div>
 
                 <div class="input-group">
                     <label>Publication Year</label>
-                    <input type="date" name="pub_year" value="" class=" form-control">
+                    <input type="date" name="pub_year" value="" class=" form-control" required>
                 </div>
 
                 <div class="input-group">
                     <label>Category ID</label>
-                    <input type="number" name="cat_id" value="" class=" form-control">
+                    <input type="number" name="cat_id" value="" class=" form-control" required>
                 </div>
 
                 <div class="input-group">
                     <label>Serial Number</label>
-                    <input type="text" name="serial_number" value="" class=" form-control">
+                    <input type="text" name="serial_number" value="" class=" form-control" required>
                 </div>
 
                 <div class="input-group">
                     <label>Copies Owned</label>
-                    <input type="number" name="copies_owned" value="" class=" form-control">
+                    <input type="number" name="copies_owned" value="" class=" form-control" required>
                 </div>
 
                 <div class="input-group">
                     <label>Copies Available</label>
-                    <input type="number" name="copies_avlbl" value="" class=" form-control">
+                    <input type="number" name="copies_avlbl" value="" class=" form-control" required>
                 </div>
 
                 <div class="input-group">
                     <label>Date Added</label>
-                    <input type="date" name="date_added" value="" class=" form-control">
+                    <input type="date" name="date_added" value="" class=" form-control" required>
                 </div>
 
                 <div class="input-group">
