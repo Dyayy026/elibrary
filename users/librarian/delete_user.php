@@ -13,7 +13,7 @@ $row=$result->fetch_assoc();
 $acc_status = "Disabled";
 
 
-$sql1="UPDATE u_details SET  acc_disable = '$acc_status',date_disabled=curdate() WHERE sch_id = '$sch_id'";
+$sql1="UPDATE u_details SET  acc_disable = '$acc_status',date_disabled=curdate(),ut_id = '5' WHERE sch_id = '$sch_id'";
  
 if($conn->query($sql1) === TRUE)
 {
