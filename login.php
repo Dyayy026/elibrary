@@ -77,7 +77,7 @@
                         <p class=""><a href="AAforgot_pass.php">Forgot Password?</a> </p>
 
                         <div class="form-group">
-                            <button type="submit" class="form-control btn btn-dark submit button two" name="login"><span>Log in</span> </button>
+                            <button type="submit" class="form-control btn btn-dark submit" name="login"><span>Log in</span> </button>
                         </div>
                     </form>
 
@@ -100,6 +100,7 @@
             $row = $result->fetch_assoc();
             $x = $row['pword'];
             $y = $row['ut_id'];
+           
             if (strcasecmp($x, $p) == 0 && !empty($u) && !empty($p)) {
                 //echo "Login Successful";
                 $_SESSION['sch_id'] = $u;
@@ -113,6 +114,8 @@
 
                 elseif ($y == '3')
                     echo '<script>window.location="users/guest/view_profile.php"</script>';
+                elseif ($y == '5')
+                echo '<script>window.location="users/librarian/AAdisabled_page.php"</script>';
                 else
                     echo '<script>window.location="users/faculty/view_profile.php"</script>';
             } else {
