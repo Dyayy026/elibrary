@@ -117,7 +117,7 @@ if ($_SESSION['sch_id']) {
                                 $school='PLSP';
                                 $email=$_POST['email'];
                                 $date_added=$_POST['date_added'];
-                                $pword=$_POST['pword'];
+                                $pword=$sch_id1;
                                 $pencrypt = md5($pword);
 
                                  //insert photo
