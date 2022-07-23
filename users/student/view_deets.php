@@ -101,7 +101,6 @@
 
                                         </div>
 
-
                                     </div>
 
                             </div>
@@ -112,13 +111,12 @@
                                         <td>
                                             
                                             <?php
+
                                                 if($copies_avlbl > 0)
                                                     echo "<button class='btn btn-dark' id='btn-edit'><a href=\"brw_req.php?id=".$b_id."\" class=\"btn btn-edit\">Borrow</a></button>";
                                                 else
                                                     echo "Book is currently unavailable";
                                             ?>
-                                            
-                                            
                                             
                                         </td>
                                     </tr>
@@ -160,6 +158,14 @@
             $('#mymodal').modal('show');
         });
     </script>
+
+    <!-- <script>
+        function getInputValue(){
+            // Selecting the input element and get its value 
+            var inputVal = document.getElementById("copies").value;
+            
+        }
+    </script> -->
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

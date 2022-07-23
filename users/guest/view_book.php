@@ -1,4 +1,7 @@
-<?php include('crud.php'); ?>
+<?php
+require('conn.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -34,12 +37,27 @@
         <div class="container" id="this">
             <div class="row">
 
-                <!-- sql query-->
-                <?php $results = mysqli_query($db, "SELECT * FROM books 
-            INNER JOIN categories ON books.cat_id = categories.cat_id"); ?>
+                <?php 
+                        $limit = 4;  
+                        if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };  
+                        $start_from = ($page-1) * $limit; 
+                    ?>
+                    <?php
+                        
+                            $sql = "SELECT * FROM books 
+                            INNER JOIN categories ON books.cat_id = categories.cat_id ORDER BY title  ASC LIMIT $start_from, $limit ";
+                            $result = $conn->query($sql);
+                            $rowcount = mysqli_num_rows($result);
+
+                        if (!($rowcount))
+                            echo "<br><center><h2><b><i>No Results</i></b></h2></center>";
+                        else {
+
+
+                    ?>
 
                 <!-- fetching data -->
-                <?php while ($row = mysqli_fetch_assoc($results)) { ?>
+                <?php while ($row = mysqli_fetch_assoc($result)) { ?>
 
 
                     <?php
@@ -67,21 +85,52 @@
 
                                 <p class="font-weight-bold" id="text"><?php echo $title ?></p>
                                 <p class="font-weight-bold capitalize" id="sub-text">By: <?php echo  $author ?></p>
+
                                 <div class="box-footer h-25 align-items-center">
                                     <!-- Button trigger view deets -->
-                                    <a ></a>
+                                    <a></a>
                                     <a href="view_deets.php?view=<?php echo $row['b_id']; ?>" class="edit_btn">View Details</a>
                                 </div>
+
                             </div>
                         </div>
 
                     </div>
 
-                <?php } ?>
+                    <?php }
+                            } ?>
             </div>
         </div>
+        <div class="span9" style="margin-left:50px;">
+                <?php 
+                //dito lang nagana css
+                $sql = "SELECT COUNT(b_id) FROM books";  
+                $rs_result = mysqli_query($conn, $sql);  
+                $row = mysqli_fetch_row($rs_result);  
+                $total_records = $row[0];  
+                $total_pages = ceil($total_records / $limit);  
+                $pagLink = "<div class='pagination'>";
 
+                for($i=1; $i<=$total_pages; $i++){
+                    $pagLink .= "<a style='text-decoration:none;
+                    padding: 5px;
+                    margin:1px;
+                    border-radius: 5px;
+                    border: 1px solid #238C8F;
+                    
+                    color: #238C8F;
+                    margin-right: 0.50em;
+                    
 
+                    ' 
+                    
+                    
+                    href='view_book.php?page=".$i."'>".$i."</a>";};
+
+                        echo $pagLink;'</div>';
+                    
+                ?>
+        </div>
 
     </section>
 
